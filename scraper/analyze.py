@@ -26,11 +26,17 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+import urllib3
 from bs4 import BeautifulSoup
 import google.generativeai as genai
 
+# Desactivar advertencias de SSL inseguro (común en sitios gubernamentales)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 # ══════════════════════════════════════════════════════════════════════════════
-# CONFIGURACIÓN
+# CONFIGURACIÓN Y CLIENTE HTTP
 # ══════════════════════════════════════════════════════════════════════════════
 
 BASE_DIR = Path(__file__).parent.parent
@@ -40,11 +46,22 @@ PROMPT_CONFIG_FILE = BASE_DIR / "config" / "prompt_config.json"
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 THROTTLE_SECONDS = 5  # Respetar límite gratuito de 15 RPM de Gemini
 
+# Configurar un cliente HTTP robusto con reintentos para evitar errores 502 o DNS temporales
+session = requests.Session()
+retries = Retry(total=5, backoff_factor=1, status_forcelist=[ 500, 502, 503, 504 ])
+session.mount('http://', HTTPAdapter(max_retries=retries))
+session.mount('https://', HTTPAdapter(max_retries=retries))
+
 HEADERS = {
-    "User-Agent": "EcoLeyAlert/1.0 (Monitor Legislativo Argentina; academic research)",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "application/json, text/html, */*",
     "Accept-Language": "es-AR,es;q=0.9",
 }
+
+def get_html(url, params=None):
+    """Wrapper para hacer GET ignorando errores de certificados SSL (verify=False)"""
+    return session.get(url, params=params, headers=HEADERS, timeout=30, verify=False)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CARGA Y GUARDADO DE DATOS
@@ -196,7 +213,7 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
             "limit": 500,
             "sort": "fecha_entrada desc",
         }
-        r = requests.get(url, params=params, headers=HEADERS, timeout=30)
+        r = get_html(url, params=params)
 
         if r.status_code == 200:
             data = r.json()
@@ -241,7 +258,7 @@ def _scrape_diputados_html(start_date: str, end_date: str) -> list:
             "fechaHasta": end_date.replace("-", "/"),
             "tipo": "todos",
         }
-        r = requests.get(url, params=params, headers=HEADERS, timeout=30)
+        r = get_html(url, params=params)
         if r.status_code != 200:
             return items
 
@@ -281,11 +298,7 @@ def scrape_senado(start_date: str, end_date: str) -> list:
     print(f"  → ArgentinaDatos API...")
     try:
         # Endpoint principal de proyectos del Senado
-        r = requests.get(
-            "https://api.argentinadatos.com/v1/senado/proyectos",
-            headers=HEADERS,
-            timeout=30,
-        )
+        r = get_html("https://api.argentinadatos.com/v1/senado/proyectos")
 
         if r.status_code == 200:
             data = r.json()
@@ -353,7 +366,7 @@ def scrape_bora(start_date: str, end_date: str) -> list:
                 "https://www.boletinoficial.gob.ar/busqueda/publicaciones"
                 f"?seccion=&palabras=&desde={fecha_str}&hasta={fecha_str}"
             )
-            r = requests.get(search_url, headers=HEADERS, timeout=30)
+            r = get_html(search_url)
 
             if r.status_code == 200:
                 soup = BeautifulSoup(r.text, "lxml")
