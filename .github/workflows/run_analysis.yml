@@ -1,0 +1,111 @@
+name: EcoLey Alert — Análisis Legislativo
+
+on:
+  schedule:
+    - cron: "0 9 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "Fecha de inicio (YYYY-MM-DD)"
+        required: true
+        default: ""
+      end_date:
+        description: "Fecha de fin (YYYY-MM-DD)"
+        required: true
+        default: ""
+      backfill:
+        description: "¿Es un backfill histórico? (true/false)"
+        required: false
+        default: "false"
+
+concurrency:
+  group: ecoley-analysis
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  analyze:
+    name: Scraping y Análisis
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Instalar dependencias
+        run: pip install -r scraper/requirements.txt
+
+      - name: Determinar rango de fechas
+        id: dates
+        run: |
+          if [ -n "${{ github.event.inputs.start_date }}" ]; then
+            echo "start_date=${{ github.event.inputs.start_date }}" >> $GITHUB_OUTPUT
+            echo "end_date=${{ github.event.inputs.end_date }}" >> $GITHUB_OUTPUT
+            echo "is_backfill=${{ github.event.inputs.backfill }}" >> $GITHUB_OUTPUT
+          else
+            echo "start_date=$(date -d 'yesterday' '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+            echo "end_date=$(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+            echo "is_backfill=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Ejecutar analyze.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          BACKFILL_FLAG=""
+          if [ "${{ steps.dates.outputs.is_backfill }}" = "true" ]; then
+            BACKFILL_FLAG="--backfill"
+          fi
+          python scraper/analyze.py \
+            $BACKFILL_FLAG \
+            --start-date "${{ steps.dates.outputs.start_date }}" \
+            --end-date "${{ steps.dates.outputs.end_date }}"
+
+      - name: Validar integridad de data.json
+        run: |
+          echo "🔍 Validando integridad de data.json..."
+          python -m json.tool data/data.json > /dev/null
+          RECORD_COUNT=$(python -c "import json; data=json.load(open('data/data.json')); print(len(data))")
+          echo "✅ data.json válido — $RECORD_COUNT registros."
+
+      - name: Commit y push de data.json
+        run: |
+          git config user.name "EcoLey Alert Bot"
+          git config user.email "ecoley-bot@noreply.github.com"
+          git add data/data.json
+          if git diff --staged --quiet; then
+            echo "ℹ️  Sin cambios en data.json. No hay commit."
+          else
+            FECHA_HOY=$(date '+%Y-%m-%d %H:%M UTC')
+            MODO="${{ steps.dates.outputs.is_backfill == 'true' && 'Backfill' || 'Actualización diaria' }}"
+            git commit -m "📊 EcoLey Alert: $MODO ${{ steps.dates.outputs.start_date }} → ${{ steps.dates.outputs.end_date }} [$FECHA_HOY]"
+            git push
+            echo "✅ data.json actualizado y publicado."
+          fi
+
+      - name: Resumen del workflow
+        if: always()
+        run: |
+          echo "## 🇦🇷 EcoLey Alert — Resumen de Ejecución" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Campo | Valor |" >> $GITHUB_STEP_SUMMARY
+          echo "| :--- | :--- |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Rango procesado** | ${{ steps.dates.outputs.start_date }} → ${{ steps.dates.outputs.end_date }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Modo** | ${{ steps.dates.outputs.is_backfill == 'true' && 'Backfill histórico' || 'Actualización diaria' }} |" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/data.json ]; then
+            COUNT=$(python -c "import json; print(len(json.load(open('data/data.json'))))" 2>/dev/null || echo "N/D")
+            echo "| **Registros totales** | $COUNT |" >> $GITHUB_STEP_SUMMARY
+          fi
