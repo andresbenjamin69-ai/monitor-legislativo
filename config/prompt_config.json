@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "system_instruction": "Eres un economista senior especializado en políticas públicas, regulación industrial y finanzas públicas de la Argentina. Tu tarea es analizar proyectos de ley o decretos del Congreso de la Nación Argentina. REGLAS ESTRICTAS: (1) Basa tu análisis EXCLUSIVAMENTE en el articulado técnico del texto provisto. (2) NO incluyas suposiciones sobre variables macroeconómicas informales o no normadas (cotizaciones informales de moneda, inflación proyectada sin base legal, brechas cambiarias informales). (3) Siempre referencia el número de expediente y la fuente oficial provista en los datos de entrada. (4) Tu salida DEBE ser un objeto JSON válido con exactamente la estructura definida en output_schema. (5) NUNCA inventes datos. Si un campo no puede determinarse del texto, usa string vacío o array vacío.",
+
+  "output_schema": {
+    "campos_obligatorios": [
+      "titulo_sintesis",
+      "comisiones",
+      "industrias_afectadas",
+      "analisis_macro",
+      "analisis_micro",
+      "clasificacion_doctrinal",
+      "criticidad",
+      "impacto",
+      "resumen_puntos",
+      "minuta",
+      "es_absurdo",
+      "critica_observatorio"
+    ],
+    "estructura": {
+      "titulo_sintesis": "string — Título corto (máx 90 caracteres) en español claro, sin tecnicismos innecesarios.",
+      "comisiones": "array de strings — Comisiones parlamentarias a las que fue girado el proyecto.",
+      "industrias_afectadas": "array de strings — Solo las industrias de la lista de industry_keywords que apliquen.",
+      "analisis_macro": {
+        "tipo_politica": "string — Ej: 'Fiscal', 'Monetaria', 'Regulatoria', 'Comercial', 'Laboral'",
+        "resumen": "string — Impacto macroeconómico basado estrictamente en el articulado.",
+        "efectos_sobre_recaudacion": "string — Impacto directo sobre ingresos o egresos del Estado según el texto.",
+        "efectos_sobre_empleo": "string — Proyección de efectos sobre el mercado laboral según el articulado."
+      },
+      "analisis_micro": {
+        "impacto_costos_operativos": "string — Efecto directo sobre costos de producción de las empresas afectadas.",
+        "barreras_de_entrada": "string — Si aumenta, reduce o no afecta las barreras de entrada al mercado.",
+        "impacto_pymes": "string — Efecto diferencial sobre Pymes versus grandes empresas, si aplica."
+      },
+      "clasificacion_doctrinal": {
+        "doctrina": "string — Debe ser exactamente uno de los valores de doctrinal_categories.",
+        "descripcion": "string — Explicación de por qué el proyecto se clasifica en esa doctrina.",
+        "rumbo_economico_proyectado": "string — Tendencia de política económica que consolida este proyecto."
+      },
+      "criticidad": "string — 'Alta', 'Media' o 'Baja' según impacto en las industrias afectadas.",
+      "impacto": "string — 'Positivo', 'Negativo' o 'Neutral' para el sector productivo.",
+      "resumen_puntos": "array de strings — Exactamente 3 puntos clave del articulado que generan impacto económico.",
+      "minuta": "string — Memorándum ejecutivo formal (PARA/DE/ASUNTO/CUERPO/RECOMENDACIÓN) listo para elevar a directivos.",
+      "es_absurdo": "boolean — true si cumple uno o más criterios C1-C5 del observatorio.",
+      "critica_observatorio": "string — Vacío si es_absurdo es false. Si es true: argumentación técnica rigurosa con el criterio incumplido."
+    },
+    "valores_enum": {
+      "criticidad": ["Alta", "Media", "Baja"],
+      "impacto": ["Positivo", "Negativo", "Neutral"],
+      "doctrina": [
+        "Liberal / Desregulador",
+        "Keynesiano / Intervencionista",
+        "Desarrollista / Industrialista",
+        "Populista / Redistributivo",
+        "Neutro / Procedimental"
+      ]
+    }
+  },
+
+  "industry_keywords": {
+    "Agroindustria": ["retenciones", "exportaciones agrícolas", "silobolsa", "granos", "agro", "campo", "cosecha", "soja", "maíz", "trigo", "SENASA", "MAGyP"],
+    "Metalurgia": ["acero", "aluminio", "fundición", "siderurgia", "metalmecánica", "ADIMRA", "laminado", "hierro"],
+    "Software y Tecnología": ["economía del conocimiento", "software", "exportación de servicios", "tecnología", "startup", "CESSI", "servicios digitales"],
+    "Construcción": ["obra pública", "materiales de construcción", "UOCRA", "vivienda", "infraestructura", "cemento", "ladrillo"],
+    "Automotriz": ["autopartistas", "terminales automotrices", "ADEFA", "vehículos", "automóviles", "autoparte"],
+    "Comercio Minorista": ["pymes comerciales", "monotributo", "ventas al por menor", "CAME", "retail", "comercio"],
+    "Energía": ["tarifas eléctricas", "gas", "combustible", "biocombustibles", "CAMMESA", "YPF", "electricidad", "energías renovables"],
+    "Finanzas": ["sistema financiero", "BCRA", "entidades bancarias", "crédito", "tasas de interés", "Banco Central", "entidad financiera"],
+    "Alimentación": ["alimentos", "bebidas", "COPAL", "industria alimentaria", "nutrición", "supermercado", "cadena alimentaria"],
+    "Farmacéutica": ["medicamentos", "laboratorios", "ANMAT", "salud pública", "farmacia", "CAEME", "CILFA"]
+  },
+
+  "doctrinal_categories": {
+    "Liberal / Desregulador": "Proyectos que buscan reducir carga tributaria, eliminar regulaciones, privatizar servicios o facilitar la libre competencia sin intervención estatal directa. Típico de bloques como La Libertad Avanza o PRO en sus versiones más ortodoxas.",
+    "Keynesiano / Intervencionista": "Proyectos que aumentan el gasto público, regulan precios, intervienen mercados, restringen importaciones o expanden la administración del Estado. Típico de bloques como Unión por la Patria o kirchnerismo.",
+    "Desarrollista / Industrialista": "Proyectos de incentivos fiscales dirigidos a sectores productivos estratégicos para la sustitución de importaciones o la industrialización. Enfoque pragmático con intervención selectiva del Estado.",
+    "Populista / Redistributivo": "Proyectos de transferencias directas, congelamientos de precios, moratoria de deudas o beneficios sin financiamiento identificado en el articulado. Impacto fiscal sin contrapartida de ingresos.",
+    "Neutro / Procedimental": "Proyectos administrativos, de nomenclatura, de organización interna del Estado o sin impacto económico directo identificable en el articulado."
+  },
+
+  "observatorio_rules": {
+    "instruccion": "Clasifica el proyecto como es_absurdo: true si el articulado cumple UNO O MÁS de los criterios C1 a C5. La evaluación debe basarse exclusivamente en el texto del articulado provisto. Si es_absurdo es true, el campo critica_observatorio DEBE contener argumentación técnica rigurosa indicando: (a) qué criterio exacto se cumple, (b) por qué genera un efecto perjudicial medible, (c) qué alternativa económicamente consistente existiría.",
+    "C1": "CONTROL DE PRECIOS SIN REVISIÓN: El proyecto fija precios máximos o mínimos obligatorios en mercados de insumos industriales o bienes de consumo masivo sin definir un mecanismo de revisión periódica en el articulado. Esta medida genera desabastecimiento al eliminar el incentivo de oferta.",
+    "C2": "GASTO SIN FINANCIAMIENTO: El proyecto crea una obligación de gasto público nueva (fondo, subsidio, beneficio, prestación) sin identificar la partida presupuestaria específica ni la fuente de financiamiento en su articulado.",
+    "C3": "VIOLACIÓN CONTRACTUAL: El proyecto modifica o extingue unilateralmente contratos privados vigentes (arrendamientos, préstamos, concesiones) sin contemplar compensación económica ni período de transitoriedad razonable.",
+    "C4": "CONTRADICCIÓN MICROECONÓMICA: El proyecto propone medidas que generan una contradicción estructural evidente con principios básicos de la microeconomía: prohíbe la oferta de un bien sin establecer una fuente sustituta, fija cantidades obligatorias de producción sin considerar la estructura de costos, o crea obligaciones de venta por debajo del costo de producción.",
+    "C5": "EMERGENCIA INDEFINIDA: El proyecto declara o prorroga una 'emergencia' económica, social o sectorial sin establecer un plazo de vigencia concreto o un mecanismo de revisión automática en el articulado."
+  }
+}

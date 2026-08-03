@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoLey Alert — Monitor Legislativo Industrial Argentina</title>
+  <meta name="description" content="Plataforma de auditoría legislativa y análisis macroeconómico y microeconómico del Congreso de la Nación Argentina. Proyectos de ley clasificados por doctrina, industria y bloque político." />
+  <meta name="author" content="EcoLey Alert" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════ HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="header-flag">🇦🇷</span>
+        <div>
+          <h1 class="header-title">EcoLey Alert</h1>
+          <p class="header-subtitle">Monitor Legislativo Industrial · Congreso de la Nación Argentina</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="header-date" id="header-date">—</span>
+        <span class="header-stats" id="header-stats">Cargando...</span>
+      </div>
+    </div>
+    <!-- Banda decorativa estilo FT -->
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════ NAV TABS -->
+  <nav class="main-nav" id="main-nav" role="navigation" aria-label="Secciones principales">
+    <div class="nav-inner">
+      <div class="nav-tabs" role="tablist">
+        <button class="nav-tab active" id="tab-todos" role="tab" aria-selected="true" data-section="legislativo">
+          Todos los Proyectos
+        </button>
+        <button class="nav-tab" id="tab-debate" role="tab" aria-selected="false" data-section="legislativo" data-estado="En Debate">
+          En Debate
+        </button>
+        <button class="nav-tab" id="tab-aprobados" role="tab" aria-selected="false" data-section="legislativo" data-estado="Aprobado">
+          Aprobados
+        </button>
+        <button class="nav-tab observatorio-tab" id="tab-observatorio" role="tab" aria-selected="false" data-section="observatorio">
+          Observatorio de Coherencia
+        </button>
+        <button class="nav-tab" id="tab-config" role="tab" aria-selected="false" data-section="configuracion">
+          Configuración
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════ FILTROS -->
+  <section class="filter-bar" id="filter-bar" aria-label="Filtros de búsqueda">
+    <div class="filter-inner">
+      <div class="filter-group">
+        <label for="filter-camara" class="filter-label">Cámara</label>
+        <select id="filter-camara" class="filter-select">
+          <option value="">Todas las Cámaras</option>
+          <option value="Cámara de Diputados">Diputados</option>
+          <option value="Cámara de Senadores">Senadores</option>
+          <option value="Boletín Oficial">Boletín Oficial</option>
+          <option value="Poder Ejecutivo">Poder Ejecutivo</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-doctrina" class="filter-label">Doctrina</label>
+        <select id="filter-doctrina" class="filter-select">
+          <option value="">Todas las Doctrinas</option>
+          <option value="Liberal / Desregulador">Liberal / Desregulador</option>
+          <option value="Keynesiano / Intervencionista">Keynesiano / Intervencionista</option>
+          <option value="Desarrollista / Industrialista">Desarrollista / Industrialista</option>
+          <option value="Populista / Redistributivo">Populista / Redistributivo</option>
+          <option value="Neutro / Procedimental">Neutro / Procedimental</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-industria" class="filter-label">Industria</label>
+        <select id="filter-industria" class="filter-select">
+          <option value="">Todas las Industrias</option>
+          <option value="Agroindustria">Agroindustria</option>
+          <option value="Metalurgia">Metalurgia</option>
+          <option value="Software y Tecnología">Software y Tecnología</option>
+          <option value="Construcción">Construcción</option>
+          <option value="Automotriz">Automotriz</option>
+          <option value="Comercio Minorista">Comercio Minorista</option>
+          <option value="Energía">Energía</option>
+          <option value="Finanzas">Finanzas</option>
+          <option value="Alimentación">Alimentación</option>
+          <option value="Farmacéutica">Farmacéutica</option>
+        </select>
+      </div>
+      <div class="filter-group filter-group--search">
+        <label for="filter-texto" class="filter-label">Búsqueda</label>
+        <input type="search" id="filter-texto" class="filter-input" placeholder="Buscar por título, expediente o autor..." />
+      </div>
+      <button class="filter-reset" id="filter-reset" title="Limpiar filtros">✕ Limpiar</button>
+    </div>
+    <div class="filter-status" id="filter-status"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="main-content">
+
+    <!-- ── Sección Legislativo (tabla principal) -->
+    <section class="section-legislativo" id="section-legislativo">
+      <div class="table-wrapper">
+        <table class="data-table" id="data-table" role="grid" aria-label="Tabla de proyectos legislativos">
+          <thead>
+            <tr>
+              <th class="col-expediente">Expediente</th>
+              <th class="col-fecha">Fecha</th>
+              <th class="col-camara">Cámara</th>
+              <th class="col-sintesis">Síntesis</th>
+              <th class="col-doctrina">Doctrina</th>
+              <th class="col-criticidad">Criticidad</th>
+              <th class="col-impacto">Impacto</th>
+              <th class="col-estado">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr class="table-loading">
+              <td colspan="8">
+                <div class="loading-spinner">
+                  <div class="spinner"></div>
+                  <span>Cargando base de datos legislativa...</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-empty hidden" id="table-empty">
+        <p>No se encontraron proyectos con los filtros seleccionados.</p>
+        <button class="btn-link" id="empty-reset">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <!-- ── Sección Observatorio de Coherencia -->
+    <section class="section-observatorio hidden" id="section-observatorio">
+      <div class="observatorio-header">
+        <h2 class="observatorio-title">Observatorio de Coherencia Económica</h2>
+        <p class="observatorio-desc">
+          Proyectos que presentan contradicciones técnicas con principios económicos fundamentales,
+          identificadas por el Cerebro Economista según los criterios C1–C5.
+        </p>
+      </div>
+      <div class="observatorio-grid" id="observatorio-grid">
+        <!-- Populated by app.js -->
+      </div>
+      <div class="observatorio-empty hidden" id="observatorio-empty">
+        <p>No se detectaron proyectos con inconsistencias económicas en la base de datos actual.</p>
+      </div>
+    </section>
+
+    <!-- ── Sección Configuración -->
+    <section class="section-configuracion hidden" id="section-configuracion">
+      <div class="config-container">
+
+        <div class="config-block">
+          <h2 class="config-title">Importación de Históricos</h2>
+          <p class="config-desc">
+            Dispara un análisis retrospectivo en la nube. Requiere un
+            <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Token de GitHub (PAT)</a>
+            con permiso <code>workflow</code>.
+          </p>
+          <div class="config-warning">
+            ⚠️ <strong>Seguridad:</strong> El token se guarda únicamente en este navegador (localStorage).
+            No usar en computadoras compartidas o públicas.
+            Cada backfill consume entre 15–20 minutos de GitHub Actions.
+          </div>
+          <div class="config-form" id="backfill-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfg-owner" class="form-label">Usuario / Organización GitHub</label>
+                <input type="text" id="cfg-owner" class="form-input" placeholder="tu-usuario" />
+              </div>
+              <div class="form-group">
+                <label for="cfg-repo" class="form-label">Repositorio</label>
+                <input type="text" id="cfg-repo" class="form-input" placeholder="monitor-legislativo" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfg-start" class="form-label">Fecha Inicio</label>
+                <input type="date" id="cfg-start" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="cfg-end" class="form-label">Fecha Fin</label>
+                <input type="date" id="cfg-end" class="form-input" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group form-group--full">
+                <label for="cfg-token" class="form-label">Token de GitHub (PAT)</label>
+                <input type="password" id="cfg-token" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary" id="btn-save-config">Guardar Configuración</button>
+              <button class="btn-secondary" id="btn-trigger-backfill">
+                🚀 Disparar Importación Histórica
+              </button>
+            </div>
+            <div class="config-status" id="backfill-status"></div>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <h2 class="config-title">Editor de Prompt del Cerebro Economista</h2>
+          <p class="config-desc">
+            Modifica las directrices del análisis. Al guardar, se hace commit directo a
+            <code>config/prompt_config.json</code> en el repositorio.
+          </p>
+          <textarea class="prompt-editor" id="prompt-editor" rows="20" spellcheck="false"
+            placeholder="Cargando prompt_config.json..."></textarea>
+          <div class="form-actions">
+            <button class="btn-secondary" id="btn-load-prompt">↓ Cargar desde Repo</button>
+            <button class="btn-primary" id="btn-save-prompt">💾 Guardar Prompt en Repo</button>
+          </div>
+          <div class="config-status" id="prompt-status"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════ PANEL MEMORÁNDUM (DRAWER) -->
+  <aside class="memo-panel hidden" id="memo-panel" role="complementary" aria-label="Memorándum ejecutivo">
+    <div class="memo-overlay" id="memo-overlay"></div>
+    <div class="memo-drawer">
+      <div class="memo-header">
+        <div>
+          <span class="memo-badge" id="memo-badge">En Debate</span>
+          <span class="memo-vinculacion hidden" id="memo-vinculacion">⚠️ Vinculación pendiente</span>
+        </div>
+        <div class="memo-header-actions">
+          <button class="btn-icon" id="btn-copy-minuta" title="Copiar minuta">📋 Copiar Minuta</button>
+          <button class="btn-icon" id="btn-print" title="Imprimir / Exportar PDF">🖨️ Imprimir</button>
+          <button class="btn-icon btn-close" id="btn-close-memo" title="Cerrar">✕</button>
+        </div>
+      </div>
+
+      <div class="memo-body" id="memo-body">
+
+        <div class="memo-section memo-identificacion">
+          <div class="memo-row">
+            <span class="memo-label">Expediente</span>
+            <span class="memo-value mono" id="memo-id">—</span>
+          </div>
+          <div class="memo-row">
+            <span class="memo-label">Cámara</span>
+            <span class="memo-value" id="memo-origen">—</span>
+          </div>
+          <div class="memo-row">
+            <span class="memo-label">Autor</span>
+            <span class="memo-value" id="memo-autor">—</span>
+          </div>
+          <div class="memo-row">
+            <span class="memo-label">Bloque</span>
+            <span class="memo-value" id="memo-bloque">—</span>
+          </div>
+          <div class="memo-row">
+            <span class="memo-label">Ingresado</span>
+            <span class="memo-value" id="memo-fecha">—</span>
+          </div>
+          <div class="memo-row" id="row-aprobacion" style="display:none">
+            <span class="memo-label">Aprobado</span>
+            <span class="memo-value" id="memo-fecha-aprobacion">—</span>
+          </div>
+          <div class="memo-row" id="row-ley" style="display:none">
+            <span class="memo-label">Nro. Ley</span>
+            <span class="memo-value mono" id="memo-ley">—</span>
+          </div>
+          <div class="memo-row">
+            <span class="memo-label">Fuente</span>
+            <a class="memo-link" id="memo-link" href="#" target="_blank" rel="noopener">Ver fuente oficial ↗</a>
+          </div>
+          <div class="memo-row" id="row-boletin" style="display:none">
+            <span class="memo-label">Boletín Oficial</span>
+            <a class="memo-link" id="memo-link-bora" href="#" target="_blank" rel="noopener">Ver B.O. ↗</a>
+          </div>
+        </div>
+
+        <div class="memo-divider"></div>
+
+        <h2 class="memo-titulo" id="memo-titulo">—</h2>
+        <p class="memo-sintesis" id="memo-sintesis">—</p>
+
+        <div class="memo-tags" id="memo-tags"></div>
+
+        <div class="memo-divider"></div>
+
+        <!-- Análisis Macroeconómico -->
+        <details class="memo-accordion" open>
+          <summary class="memo-accordion-title">Análisis Macroeconómico</summary>
+          <div class="memo-accordion-body">
+            <div class="memo-row">
+              <span class="memo-label">Tipo de Política</span>
+              <span class="memo-value" id="memo-macro-tipo">—</span>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Resumen</span>
+              <p class="memo-text" id="memo-macro-resumen">—</p>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Efectos sobre Recaudación</span>
+              <p class="memo-text" id="memo-macro-recaudacion">—</p>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Efectos sobre Empleo</span>
+              <p class="memo-text" id="memo-macro-empleo">—</p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Análisis Microeconómico -->
+        <details class="memo-accordion">
+          <summary class="memo-accordion-title">Análisis Microeconómico</summary>
+          <div class="memo-accordion-body">
+            <div class="memo-field">
+              <span class="memo-label">Impacto en Costos Operativos</span>
+              <p class="memo-text" id="memo-micro-costos">—</p>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Barreras de Entrada</span>
+              <p class="memo-text" id="memo-micro-barreras">—</p>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Impacto en PyMEs</span>
+              <p class="memo-text" id="memo-micro-pymes">—</p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Clasificación Doctrinal -->
+        <details class="memo-accordion">
+          <summary class="memo-accordion-title">Clasificación Doctrinal</summary>
+          <div class="memo-accordion-body">
+            <div class="memo-row">
+              <span class="memo-label">Corriente</span>
+              <span class="memo-value" id="memo-doctrina">—</span>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Fundamento</span>
+              <p class="memo-text" id="memo-doctrina-desc">—</p>
+            </div>
+            <div class="memo-field">
+              <span class="memo-label">Rumbo Proyectado</span>
+              <p class="memo-text" id="memo-rumbo">—</p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Puntos Clave -->
+        <details class="memo-accordion" open>
+          <summary class="memo-accordion-title">Puntos Clave del Articulado</summary>
+          <div class="memo-accordion-body">
+            <ul class="memo-puntos" id="memo-puntos"></ul>
+          </div>
+        </details>
+
+        <!-- Memorándum Ejecutivo -->
+        <details class="memo-accordion memo-minuta-accordion" open>
+          <summary class="memo-accordion-title">📄 Memorándum Ejecutivo</summary>
+          <div class="memo-accordion-body">
+            <pre class="memo-minuta" id="memo-minuta">—</pre>
+          </div>
+        </details>
+
+        <!-- Observatorio (solo si es_absurdo) -->
+        <div class="memo-observatorio hidden" id="memo-observatorio">
+          <div class="memo-divider"></div>
+          <div class="observatorio-alert">
+            <h4 class="obs-alert-title">🚨 Observatorio de Coherencia Económica</h4>
+            <p class="memo-text" id="memo-critica">—</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════════ FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-text">
+        <strong>EcoLey Alert</strong> — Monitor Legislativo Industrial Argentina.
+        Los datos provienen de fuentes oficiales:
+        <a href="https://datos.hcdn.gob.ar/" target="_blank" rel="noopener">datos.hcdn.gob.ar</a>,
+        <a href="https://api.argentinadatos.com/" target="_blank" rel="noopener">api.argentinadatos.com</a> y
+        <a href="https://www.boletinoficial.gob.ar/" target="_blank" rel="noopener">boletinoficial.gob.ar</a>.
+      </p>
+      <p class="footer-disclaimer">
+        El análisis económico es generado por IA (Gemini 1.5 Flash) y debe ser verificado por un profesional antes de tomar decisiones. Todo análisis incluye el link a la fuente legislativa oficial.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
