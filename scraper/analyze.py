@@ -575,6 +575,9 @@ def analyze_with_gemini(item: dict, config: dict) -> dict | None:
                 print(f"  ❌ Gemini devolvió JSON inválido: {e2}")
                 return None
         return None
+    except Exception as e:
+        print(f"  ❌ Error inesperado con Gemini API: {e}")
+        return None
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CONSTRUCCIÓN DEL REGISTRO FINAL
