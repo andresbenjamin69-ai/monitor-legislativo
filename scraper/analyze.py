@@ -553,14 +553,27 @@ def analyze_with_gemini(item: dict, config: dict) -> dict | None:
             ),
         )
 
-        result = json.loads(response.text)
-        return result
+        raw_text = response.text.strip()
+        if raw_text.startswith("```json"):
+            raw_text = raw_text[7:]
+        if raw_text.startswith("```"):
+            raw_text = raw_text[3:]
+        if raw_text.endswith("```"):
+            raw_text = raw_text[:-3]
+        raw_text = raw_text.strip()
 
-    except json.JSONDecodeError as e:
-        print(f"  ❌ Gemini devolvió JSON inválido: {e}")
-        return None
-    except Exception as e:
-        print(f"  ❌ Error Gemini API: {e}")
+        try:
+            result = json.loads(raw_text)
+            return result
+        except json.JSONDecodeError as e:
+            import re
+            raw_text = re.sub(r',\s*}', '}', raw_text)
+            raw_text = re.sub(r',\s*\]', ']', raw_text)
+            try:
+                return json.loads(raw_text)
+            except Exception as e2:
+                print(f"  ❌ Gemini devolvió JSON inválido: {e2}")
+                return None
         return None
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -694,12 +707,12 @@ def run_pipeline(start_date: str, end_date: str, is_backfill: bool = False):
         return
 
     # ── Paso 4: Análisis con Gemini (con throttling)
-    print(f"\n🧠 Análisis con Gemini 1.5 Flash (throttling: {THROTTLE_SECONDS}s entre llamadas)...")
+    print(f"\n🧠 Análisis con Gemini 3.5 Flash (throttling: {THROTTLE_SECONDS}s entre llamadas)...")
     new_records = []
 
+    import re
     for i, item in enumerate(items_to_analyze, 1):
-        titulo_display = item.get("titulo", "")[:65]
-        print(f"\n[{i:03d}/{len(items_to_analyze):03d}] {titulo_display}...")
+        print(f"\n[{i:03d}/{len(items_to_analyze):03d}] {item.get('titulo', '')[:65]}...")
         print(f"         Origen: {item.get('origen')} | Fecha: {item.get('fecha')}")
 
         analysis = analyze_with_gemini(item, config)
