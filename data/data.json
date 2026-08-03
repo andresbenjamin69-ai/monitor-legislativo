@@ -1,1 +1,221 @@
-[]
+[
+  {
+    "id": "SENADO-2026-07-16-001",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "Acuerdos para el ascenso de diplomáticos pertenecientes al Ministerio de Relaciones Exteriores, Comercio Internacional y Culto. ( PE-105/25-AC , PE-106/25-AC , PE-107/25-AC , PE-108/25-AC , PE-109/25-AC , PE-110/25-AC , O.D. 22/2026 , O.D. 23/2026 , O.D. 24/2026 , O.D. 25/2026 , O.D. 26/2026 , O.D. 27/2026",
+    "titulo_sintesis": "Acuerdos para el ascenso de diplomáticos de Cancillería",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-07-16",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Comisión de Acuerdos"
+    ],
+    "industrias_afectadas": [],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto trata exclusivamente sobre la aprobación de acuerdos para el ascenso de personal diplomático del Ministerio de Relaciones Exteriores, Comercio Internacional y Culto. No presenta un impacto macroeconómico directo ni altera variables agregadas de la economía.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal. Los ascensos conllevan variaciones salariales que se ejecutan dentro de las partidas presupuestarias preexistentes asignadas al Ministerio.",
+      "efectos_sobre_empleo": "Afecta únicamente la estructura jerárquica interna del cuerpo diplomático del sector público, sin impacto en el mercado laboral general."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "No genera impacto en los costos operativos del sector privado.",
+      "barreras_de_entrada": "No afecta las barreras de entrada a ningún mercado de bienes o servicios.",
+      "impacto_pymes": "No aplica. No genera efectos diferenciales sobre las pequeñas y medianas empresas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un acto administrativo y constitucional del Senado de la Nación para convalidar ascensos dentro del servicio exterior de la Nación, sin contenido de política económica activa.",
+      "rumbo_economico_proyectado": "Consolidación de la regularidad institucional y administrativa del servicio exterior del Estado."
+    },
+    "criticidad": "Baja",
+    "impacto": "Neutral",
+    "resumen_puntos": [
+      "Aprobación de pliegos para el ascenso de funcionarios del Servicio Exterior de la Nación.",
+      "Tratamiento parlamentario bajo expedientes PE-105/25-AC a PE-110/25-AC y Órdenes del Día correspondientes.",
+      "Regularización de la estructura jerárquica del Ministerio de Relaciones Exteriores, Comercio Internacional y Culto."
+    ],
+    "minuta": "PARA: Directorio\nDE: Economista Senior\nASUNTO: Análisis del Expediente SENADO-2026-07-16-001 - Ascensos Diplomáticos\n\nCUERPO: Se analiza el proyecto de tratamiento de acuerdos para el ascenso de funcionarios diplomáticos de la Cancillería argentina (Expediente SENADO-2026-07-16-001). El texto consiste exclusivamente en la aprobación de pliegos de ascensos (PE-105/25-AC al PE-110/25-AC). Desde una perspectiva económica, la medida es de carácter estrictamente administrativo y procedimental, regulando la carrera del personal del servicio exterior sin alterar regulaciones de mercado, tributos ni generar un impacto macroeconómico o microeconómico directo sobre el sector productivo privado.\n\nRECOMENDACIÓN: Archivar para seguimiento de rutina institucional. No se identifican riesgos ni oportunidades para las carteras de inversión o sectores industriales bajo análisis.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-07-16-002",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "Acuerdo para designaciones en el Poder Judicial, Ministerio Público Fiscal y Ministerio Público de la Defensa de la Nación. ( PE-136/26-AC , PE-138/26-AC , PE-139/26-AC , PE-140/26-AC , PE-141/26-AC , PE-142/26-AC , PE-121/26-AC , PE-128/26-AC , PE-143/26-AC , PE-144/26-AC , PE-145/26-AC , PE-146/26-AC , PE-147/26-AC , PE-148/26-AC , PE-150/26-AC , PE-152/26-AC , PE-153/26-AC , PE-105/26-AC , PE-158/26-AC , PE-159/26-AC , PE-160/26-AC , PE-161/26-AC , PE-163/26-AC , PE-168/26-AC , PE-183/26-AC , PE-188/26-AC , PE-190/26-AC , O.D. 123/2026 , O.D. 125/2026 , O.D. 126/2026 , O.D. 127/2026 , O.D. 128/2026 , O.D. 129/2026 , O.D. 198/2026 , O.D. 199/2026 , O.D. 200/2026 , O.D. 201/2026 , O.D. 202/2026 , O.D. 203/2026 , O.D. 204/2026 , O.D. 205/2026 , O.D. 206/2026 , O.D. 207/2026 , O.D. 208/2026 , O.D. 209/2026 , O.D. 210/2026 , O.D. 211/2026 , O.D. 212/2026 , O.D. 213/2026 , O.D. 214/2026 , O.D. 215/2026 , O.D. 217/2026 , O.D. 218/2026 , O.D. 219/2026",
+    "titulo_sintesis": "Acuerdo para designaciones en el Poder Judicial y Ministerios Públicos",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-07-16",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto trata exclusivamente sobre la aprobación de pliegos para designaciones en el Poder Judicial, Ministerio Público Fiscal y Ministerio Público de la Defensa. No presenta un impacto macroeconómico directo ni modifica variables agregadas de la economía.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal, más allá de las partidas presupuestarias preexistentes asignadas al funcionamiento del Poder Judicial.",
+      "efectos_sobre_empleo": "No genera efectos directos sobre el mercado laboral general, limitándose a la cobertura de cargos específicos dentro del sector público judicial."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "No genera impacto directo en los costos operativos de las empresas privadas.",
+      "barreras_de_entrada": "No afecta las barreras de entrada a ningún mercado de bienes o servicios.",
+      "impacto_pymes": "No presenta un impacto diferencial para las pequeñas y medianas empresas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto se limita al trámite constitucional de prestación de acuerdos para designaciones en el Poder Judicial y Ministerios Públicos, sin adoptar posturas de política económica activa.",
+      "rumbo_economico_proyectado": "Consolidación de la estabilidad institucional y procedimental del Estado, sin alterar el rumbo económico vigente."
+    },
+    "criticidad": "Baja",
+    "impacto": "Neutral",
+    "resumen_puntos": [
+      "Aprobación de pliegos para la designación de magistrados en el Poder Judicial de la Nación.",
+      "Designación de integrantes del Ministerio Público Fiscal bajo expediente de trámite parlamentario.",
+      "Nombramiento de defensores oficiales para el Ministerio Público de la Defensa de la Nación."
+    ],
+    "minuta": "PARA: Directorio\nDE: Economista Senior\nASUNTO: Análisis del Expediente SENADO-2026-07-16-002 - Designaciones Judiciales\n\nCUERPO: Se analiza el expediente de referencia (SENADO-2026-07-16-002), originado en la Cámara de Senadores, el cual contiene las solicitudes de acuerdo del Poder Ejecutivo para diversas designaciones en el Poder Judicial, el Ministerio Público Fiscal y el Ministerio Público de la Defensa de la Nación. El texto se compone estrictamente de la nómina de pliegos y órdenes del día para su tratamiento legislativo, según consta en la fuente oficial (https://www.senado.gob.ar/parlamentario/parlamentaria/).\n\nDesde una perspectiva económica, la medida es de carácter estrictamente procedimental e institucional. No altera la estructura tributaria, regulatoria ni de gasto público directo fuera de las partidas ya presupuestadas para el sostenimiento de la administración de justicia.\n\nRECOMENDACIÓN: Archivar el presente análisis por carecer de impacto directo sobre el sector productivo o las variables macroeconómicas de interés corporativo.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-07-16-003",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "Acuerdo para posibilitar un nuevo nombramiento del Vocal de la Cámara Nacional de Apelaciones del Trabajo de la Capital Federal, Sala VIII, al Dr. Víctor Arturo Pesino. PE-137/26-AC , O.D. 124/2026",
+    "titulo_sintesis": "Nombramiento de Vocal de la Cámara Nacional de Apelaciones del Trabajo (Dr. Pesino)",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-07-16",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto trata exclusivamente sobre el acuerdo para el nombramiento de un vocal en la Cámara Nacional de Apelaciones del Trabajo, careciendo de impacto macroeconómico directo.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado según el articulado provisto.",
+      "efectos_sobre_empleo": "No se prevén efectos directos sobre el mercado laboral agregado a partir de este nombramiento individual."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo sobre los costos operativos de las empresas.",
+      "barreras_de_entrada": "No afecta las barreras de entrada al mercado.",
+      "impacto_pymes": "Sin impacto diferencial sobre las pequeñas y medianas empresas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un trámite de acuerdo del Senado para la designación de un magistrado judicial, lo cual constituye un acto administrativo y procedimental del Estado sin contenido de política económica.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico, consolidando la continuidad institucional del Poder Judicial."
+    },
+    "criticidad": "Baja",
+    "impacto": "Neutral",
+    "resumen_puntos": [
+      "Trámite de acuerdo del Senado para el nombramiento del Dr. Víctor Arturo Pesino.",
+      "Designación como Vocal de la Cámara Nacional de Apelaciones del Trabajo de la Capital Federal, Sala VIII.",
+      "Expediente PE-137/26-AC, Orden del Día 124/2026."
+    ],
+    "minuta": "PARA: Directorio\nDE: Economista Senior\nASUNTO: Análisis del Expediente SENADO-2026-07-16-003 - Acuerdo para nombramiento judicial\n\nCUERPO:\nSe analiza el proyecto de acuerdo para posibilitar un nuevo nombramiento del Dr. Víctor Arturo Pesino como Vocal de la Cámara Nacional de Apelaciones del Trabajo de la Capital Federal, Sala VIII (Expediente SENADO-2026-07-16-003).\n\nEl proyecto es de naturaleza estrictamente administrativa y judicial, correspondiente a las atribuciones constitucionales del Senado de la Nación para prestar acuerdo a los nombramientos de magistrados.\n\nDesde el punto de vista económico, la medida no genera impactos macroeconómicos, fiscales ni regulatorios sobre el sector productivo. Se clasifica como una medida de doctrina Neutra / Procedimental.\n\nRECOMENDACIÓN:\nSe recomienda tomar conocimiento del trámite sin requerir acciones de monitoreo adicionales, dado su impacto neutral para la actividad empresarial y las finanzas públicas.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-07-16-004",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "Acuerdo para designar Vocal de la Cámara Nacional de Apelaciones en lo Comercial de la Capital Federal, Sala C, al Dr. Javier Jorge Cosentino. PE-173/26-AC , O.D. 216/2026",
+    "titulo_sintesis": "Designación de Vocal en la Cámara Nacional de Apelaciones en lo Comercial",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-07-16",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Acuerdos"
+    ],
+    "industrias_afectadas": [],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "La designación de un Vocal en la Cámara Nacional de Apelaciones en lo Comercial no presenta un impacto macroeconómico directo, tratándose de un nombramiento de carácter institucional y procedimental para el funcionamiento del Poder Judicial.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado nacional, más allá de la partida presupuestaria preexistente para el sostenimiento del Poder Judicial.",
+      "efectos_sobre_empleo": "Sin impacto sobre el mercado laboral general."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "No altera los costos operativos de las empresas de manera directa.",
+      "barreras_de_entrada": "No afecta las barreras de entrada al mercado.",
+      "impacto_pymes": "No presenta un impacto diferencial directo sobre las PyMEs."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un trámite de designación de un magistrado judicial (Vocal de Cámara), lo cual constituye un acto administrativo y constitucional del Senado sin contenido de política económica activa.",
+      "rumbo_economico_proyectado": "Consolidación de la estructura institucional y procedimental del Poder Judicial de la Nación, manteniendo la continuidad del servicio de justicia comercial."
+    },
+    "criticidad": "Baja",
+    "impacto": "Neutral",
+    "resumen_puntos": [
+      "Designación del Dr. Javier Jorge Cosentino como Vocal de la Cámara Nacional de Apelaciones en lo Comercial.",
+      "Asignación específica a la Sala C de la mencionada Cámara de Apelaciones.",
+      "Trámite parlamentario bajo el expediente PE-173/26-AC y Orden del Día 216/2026."
+    ],
+    "minuta": "PARA: Directorio\nDE: Economista Senior\nASUNTO: Análisis del Expediente SENADO-2026-07-16-004 - Designación de Vocal de Cámara Comercial\n\nCUERPO: Se analiza el proyecto de acuerdo para la designación del Dr. Javier Jorge Cosentino como Vocal de la Cámara Nacional de Apelaciones en lo Comercial de la Capital Federal, Sala C. Al tratarse de un nombramiento judicial de rutina dentro de las facultades constitucionales del Senado, el proyecto carece de impacto económico directo, regulatorio o fiscal de carácter general.\n\nRECOMENDACIÓN: Archivar el asunto por tratarse de un trámite estrictamente institucional y procedimental sin impacto sobre la actividad productiva o corporativa.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-07-16-006",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "Moción para pasar a un cuarto intermedio hasta el 6 de agosto para el tratamiento del proyecto de Ley de Inviolabilidad de la Propiedad Privada.",
+    "titulo_sintesis": "Moción de cuarto intermedio para tratar la Ley de Inviolabilidad de la Propiedad Privada",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-07-16",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "La moción suspende temporalmente el debate legislativo sobre la propiedad privada, postergando cualquier definición regulatoria o macroeconómica asociada hasta el 6 de agosto de 2026.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado en el articulado de la moción.",
+      "efectos_sobre_empleo": "Sin efectos directos sobre el mercado laboral."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "No genera variaciones en los costos operativos de las empresas.",
+      "barreras_de_entrada": "No afecta las barreras de entrada al mercado.",
+      "impacto_pymes": "No presenta un impacto diferencial para las PyMEs."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de una moción de orden puramente procedimental para postergar el tratamiento de un proyecto de ley, sin contenido económico sustantivo en su texto.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual debido a su carácter estrictamente administrativo y de agenda parlamentaria."
+    },
+    "criticidad": "Baja",
+    "impacto": "Neutral",
+    "resumen_puntos": [
+      "Propone un cuarto intermedio en la sesión de la Cámara de Senadores.",
+      "Establece como fecha de reanudación para el tratamiento el 6 de agosto de 2026.",
+      "Difiere el debate del proyecto de Ley de Inviolabilidad de la Propiedad Privada."
+    ],
+    "minuta": "PARA: Directorio\nDE: Economista Senior\nASUNTO: Análisis de la moción de cuarto intermedio (Expediente SENADO-2026-07-16-006)\n\nCUERPO:\nSe analiza la moción aprobada en la Cámara de Senadores para pasar a un cuarto intermedio hasta el 6 de agosto de 2026, postergando el debate del proyecto de Ley de Inviolabilidad de la Propiedad Privada. Al tratarse de una medida de carácter estrictamente procedimental y legislativo, no se identifican impactos económicos, fiscales o regulatorios directos en el corto plazo. La postergación dilata la definición sobre el marco legal de la propiedad privada, manteniendo el statu quo regulatorio por el período establecido.\n\nRECOMENDACIÓN:\nMonitorear la reanudación del debate el 6 de agosto de 2026, momento en el cual se analizará el articulado sustantivo del proyecto de ley de fondo una vez que tome estado parlamentario efectivo.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  }
+]
