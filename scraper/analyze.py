@@ -196,49 +196,98 @@ def reconcile_bora_item(records: list, item: dict) -> bool:
 def scrape_diputados(start_date: str, end_date: str) -> list:
     """
     Fuente: https://datos.hcdn.gob.ar/ (API CKAN oficial HCDN)
+    Paso 1: Obtener UUID real del recurso via package_show
+    Paso 2: Consultar datastore_search con ese UUID
     Fallback: scraping HTML del buscador de proyectos.
     """
     items = []
-    year = start_date[:4]
-    # Mapping de año a período parlamentario argentino
-    period_map = {"2023": "141", "2024": "142", "2025": "143", "2026": "144"}
-    period = period_map.get(year, "144")
 
-    print(f"  → API CKAN (período {period})...")
+    print("  → API CKAN (Proyectos Parlamentarios)...")
     try:
-        # Endpoint de búsqueda del portal de datos abiertos de Diputados
-        url = "https://datos.hcdn.gob.ar/api/3/action/datastore_search"
-        params = {
-            "resource_id": f"expedientes-{period}",
-            "limit": 500,
-            "sort": "fecha_entrada desc",
-        }
-        r = get_html(url, params=params)
+        # PASO 1: Obtener el UUID real del recurso
+        pkg_url = "https://datos.hcdn.gob.ar/api/3/action/package_show"
+        pkg_r = get_html(pkg_url, params={"id": "proyectos-parlamentarios"})
 
-        if r.status_code == 200:
+        resource_id = None
+        if pkg_r.status_code == 200:
+            pkg_data = pkg_r.json()
+            resources = pkg_data.get("result", {}).get("resources", [])
+            # Buscar el recurso JSON o CSV con datastore activo
+            for res in resources:
+                if res.get("datastore_active") or res.get("format", "").upper() in ("JSON", "CSV"):
+                    resource_id = res.get("id")
+                    break
+            # Fallback al UUID conocido si no se encontró
+            if not resource_id:
+                resource_id = "10953cf9-e851-4187-bb94-356b7256e112"
+        else:
+            # Si package_show falla, usar UUID conocido
+            resource_id = "10953cf9-e851-4187-bb94-356b7256e112"
+
+        print(f"  → Recurso UUID: {resource_id[:12]}...")
+
+        # PASO 2: Consultar el datastore con el UUID real (con paginación)
+        ds_url = "https://datos.hcdn.gob.ar/api/3/action/datastore_search"
+        offset = 0
+        page_size = 500
+        total_fetched = 0
+
+        while True:
+            params = {
+                "resource_id": resource_id,
+                "limit": page_size,
+                "offset": offset,
+            }
+            r = get_html(ds_url, params=params)
+
+            if r.status_code != 200:
+                print(f"  ⚠️  datastore_search HTTP {r.status_code}")
+                break
+
             data = r.json()
-            for rec in data.get("result", {}).get("records", []):
-                fecha = (rec.get("fecha_entrada") or "")[:10]
-                if not (start_date <= fecha <= end_date):
+            records = data.get("result", {}).get("records", [])
+            if not records:
+                break
+
+            for rec in records:
+                # El campo de fecha puede tener distintos nombres según el dataset
+                fecha = (rec.get("fecha_presentacion") or rec.get("fecha") or
+                         rec.get("fecha_entrada") or "")[:10]
+                if not fecha or not (start_date <= fecha <= end_date):
                     continue
-                exp = rec.get("expediente", rec.get("numero_expediente", ""))
+
+                exp = (rec.get("expediente") or rec.get("numero_expediente") or
+                       rec.get("nro_expediente") or "")
+                titulo = (rec.get("sumario") or rec.get("titulo") or
+                          rec.get("descripcion") or "")
+
                 items.append({
                     "id_raw": exp,
-                    "titulo": rec.get("titulo", rec.get("sumario", "")),
-                    "autor": rec.get("autor", rec.get("firmante", "")),
-                    "bloque": rec.get("bloque", rec.get("partido", "")),
+                    "titulo": titulo,
+                    "autor": (rec.get("firmantes") or rec.get("autor") or
+                              rec.get("firmante") or ""),
+                    "bloque": (rec.get("bloque") or rec.get("partido") or ""),
                     "fecha": fecha,
                     "origen": "Cámara de Diputados",
                     "link": (
                         f"https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp={exp}"
                         if exp else "https://datos.hcdn.gob.ar/"
                     ),
-                    "texto": rec.get("resumen", rec.get("titulo", ""))[:3000],
+                    "texto": titulo[:3000],
                     "es_aprobado": False,
                     "exp_parlamentario": "",
                 })
-        else:
-            raise ValueError(f"HTTP {r.status_code}")
+
+            total_fetched += len(records)
+            total_available = data.get("result", {}).get("total", 0)
+
+            # Si ya recorrimos todo o encontramos suficientes, salir
+            if offset + page_size >= total_available:
+                break
+            offset += page_size
+            time.sleep(1)  # Pausa cortés entre páginas
+
+        print(f"  → Total registros revisados del CKAN: {total_fetched}")
 
     except Exception as e:
         print(f"  ⚠️  CKAN falló ({e}). Fallback scraping web...")
@@ -293,39 +342,47 @@ def _scrape_diputados_html(start_date: str, end_date: str) -> list:
 
 def scrape_senado(start_date: str, end_date: str) -> list:
     """
-    Fuente: https://api.argentinadatos.com/v1/senado/proyectos
-    API pública de terceros que estructura datos del Senado en JSON.
-    El portal oficial del Senado (senado.gob.ar) no tiene API pública.
+    Fuente: https://api.argentinadatos.com/
+    Nota: La API no tiene endpoint de 'proyectos'. Usamos 'actas' (votaciones)
+    que contiene las decisiones legislativas del Senado.
     """
     items = []
-    print(f"  → ArgentinaDatos API...")
+    print("  → ArgentinaDatos API (Actas del Senado)...")
     try:
-        # Endpoint principal de proyectos del Senado
-        r = get_html("https://api.argentinadatos.com/v1/senado/proyectos")
+        # Intentar filtrar por año si es posible
+        year = start_date[:4]
+        r = get_html(f"https://api.argentinadatos.com/v1/senado/actas/{year}")
+
+        if r.status_code != 200:
+            # Fallback: obtener todas las actas
+            r = get_html("https://api.argentinadatos.com/v1/senado/actas")
 
         if r.status_code == 200:
             data = r.json()
-            # La API puede devolver un array directo o un objeto con clave "data"
             records_list = data if isinstance(data, list) else data.get("data", [])
 
             for item in records_list:
-                fecha = (item.get("fecha") or item.get("fecha_entrada") or "")[:10]
-                if not (start_date <= fecha <= end_date):
+                fecha = (item.get("fecha") or item.get("fecha_sesion") or "")[:10]
+                if not fecha or not (start_date <= fecha <= end_date):
                     continue
-                exp = item.get("expediente") or item.get("numero") or ""
+
+                titulo = (item.get("titulo") or item.get("asunto") or
+                          item.get("descripcion") or "")
+                resultado = (item.get("resultado") or item.get("result") or "")
+
                 items.append({
-                    "id_raw": exp,
-                    "titulo": item.get("titulo") or item.get("descripcion") or "",
+                    "id_raw": (item.get("expediente") or item.get("numero") or
+                               f"SENADO-{fecha}-{len(items)+1:03d}"),
+                    "titulo": titulo,
                     "autor": (item.get("autor") or item.get("senador") or
-                              item.get("firmante") or ""),
-                    "bloque": (item.get("bloque") or item.get("partido") or
-                               item.get("grupo") or ""),
+                              "Senado de la Nación"),
+                    "bloque": (item.get("bloque") or item.get("partido") or ""),
                     "fecha": fecha,
                     "origen": "Cámara de Senadores",
                     "link": (item.get("url") or item.get("link") or
-                             f"https://www.senado.gob.ar/parlamentario/proyectos/"),
-                    "texto": (item.get("resumen") or item.get("titulo") or "")[:3000],
-                    "es_aprobado": False,
+                             "https://www.senado.gob.ar/parlamentario/parlamentaria/"),
+                    "texto": titulo[:3000],
+                    "es_aprobado": "aprobado" in resultado.lower() if resultado else False,
                     "exp_parlamentario": "",
                 })
         else:
@@ -334,7 +391,7 @@ def scrape_senado(start_date: str, end_date: str) -> list:
     except Exception as e:
         print(f"  ❌ Error scraping Senado: {e}")
 
-    print(f"  📋 Senado: {len(items)} proyectos en el rango.")
+    print(f"  📋 Senado: {len(items)} actas en el rango.")
     return items
 
 
