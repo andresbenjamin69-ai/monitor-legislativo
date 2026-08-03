@@ -250,23 +250,29 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
                 break
 
             for rec in records:
-                # El campo de fecha puede tener distintos nombres según el dataset
-                fecha = (rec.get("fecha_presentacion") or rec.get("fecha") or
-                         rec.get("fecha_entrada") or "")[:10]
+                # Normalizar keys a minúsculas para facilitar la extracción
+                rec_lower = {k.lower(): v for k, v in rec.items()}
+                
+                # Extraer fecha
+                fecha_raw = (rec_lower.get("publicacion_fecha") or rec_lower.get("fecha_presentacion") or 
+                             rec_lower.get("fecha") or rec_lower.get("fecha_entrada") or "")
+                fecha = fecha_raw[:10] if isinstance(fecha_raw, str) else str(fecha_raw)[:10]
+                
                 if not fecha or not (start_date <= fecha <= end_date):
                     continue
 
-                exp = (rec.get("expediente") or rec.get("numero_expediente") or
-                       rec.get("nro_expediente") or "")
-                titulo = (rec.get("sumario") or rec.get("titulo") or
-                          rec.get("descripcion") or "")
+                exp = (rec_lower.get("exp_diputados") or rec_lower.get("expediente") or 
+                       rec_lower.get("numero_expediente") or rec_lower.get("nro_expediente") or "")
+                titulo = (rec_lower.get("titulo") or rec_lower.get("sumario") or
+                          rec_lower.get("descripcion") or "")
+                autor = (rec_lower.get("autor") or rec_lower.get("firmantes") or 
+                         rec_lower.get("firmante") or "")
 
                 items.append({
                     "id_raw": exp,
                     "titulo": titulo,
-                    "autor": (rec.get("firmantes") or rec.get("autor") or
-                              rec.get("firmante") or ""),
-                    "bloque": (rec.get("bloque") or rec.get("partido") or ""),
+                    "autor": autor,
+                    "bloque": (rec_lower.get("bloque") or rec_lower.get("partido") or ""),
                     "fecha": fecha,
                     "origen": "Cámara de Diputados",
                     "link": (
@@ -537,7 +543,7 @@ def analyze_with_gemini(item: dict, config: dict) -> dict | None:
     """Envía el ítem a Gemini API y devuelve el análisis estructurado."""
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-3.5-flash")
 
         response = model.generate_content(
             build_prompt(item, config),
