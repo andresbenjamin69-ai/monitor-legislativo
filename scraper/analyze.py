@@ -253,9 +253,12 @@ def _scrape_diputados_html(start_date: str, end_date: str) -> list:
     items = []
     try:
         url = "https://www.hcdn.gob.ar/proyectos/resultados-buscador.html"
+        # HCDN espera fechas en formato DD/MM/YYYY
+        start_fmt = datetime.strptime(start_date, "%Y-%m-%d").strftime("%d/%m/%Y")
+        end_fmt = datetime.strptime(end_date, "%Y-%m-%d").strftime("%d/%m/%Y")
         params = {
-            "fechaDesde": start_date.replace("-", "/"),
-            "fechaHasta": end_date.replace("-", "/"),
+            "fechaDesde": start_fmt,
+            "fechaHasta": end_fmt,
             "tipo": "todos",
         }
         r = get_html(url, params=params)
