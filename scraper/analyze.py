@@ -31,7 +31,11 @@ from urllib3.util.retry import Retry
 import urllib3
 from bs4 import BeautifulSoup
 import google.generativeai as genai
+from google.api_core.exceptions import ResourceExhausted
 
+class DailyQuotaExceeded(Exception):
+    """Excepción lanzada cuando se alcanza un límite estricto de cuota que no se resuelve con pausas."""
+    pass
 # Desactivar advertencias de SSL inseguro (común en sitios gubernamentales)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -522,45 +526,54 @@ No incluyas texto, markdown ni explicaciones fuera del JSON.
 """
 
 
-def analyze_with_gemini(item: dict, config: dict) -> dict | None:
-    """Envía el ítem a Gemini API y devuelve el análisis estructurado."""
-    try:
-        genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel("gemini-3.5-flash")
+def analyze_with_gemini(item: dict, config: dict, max_retries: int = 3) -> dict | None:
+    """Envía el ítem a Gemini API y devuelve el análisis estructurado con reintentos."""
+    genai.configure(api_key=GEMINI_API_KEY)
+    model = genai.GenerativeModel("gemini-3.5-flash")
 
-        response = model.generate_content(
-            build_prompt(item, config),
-            generation_config=genai.GenerationConfig(
-                temperature=0.15,          # Baja temperatura = mayor rigor
-                response_mime_type="application/json",
-            ),
-        )
-
-        raw_text = response.text.strip()
-        if raw_text.startswith("```json"):
-            raw_text = raw_text[7:]
-        if raw_text.startswith("```"):
-            raw_text = raw_text[3:]
-        if raw_text.endswith("```"):
-            raw_text = raw_text[:-3]
-        raw_text = raw_text.strip()
-
+    for attempt in range(max_retries):
         try:
-            result = json.loads(raw_text)
-            return result
-        except json.JSONDecodeError as e:
-            import re
-            raw_text = re.sub(r',\s*}', '}', raw_text)
-            raw_text = re.sub(r',\s*\]', ']', raw_text)
+            response = model.generate_content(
+                build_prompt(item, config),
+                generation_config=genai.GenerationConfig(
+                    temperature=0.15,          # Baja temperatura = mayor rigor
+                    response_mime_type="application/json",
+                ),
+            )
+    
+            raw_text = response.text.strip()
+            if raw_text.startswith("```json"):
+                raw_text = raw_text[7:]
+            if raw_text.startswith("```"):
+                raw_text = raw_text[3:]
+            if raw_text.endswith("```"):
+                raw_text = raw_text[:-3]
+            raw_text = raw_text.strip()
+    
             try:
-                return json.loads(raw_text)
-            except Exception as e2:
-                print(f"  ❌ Gemini devolvió JSON inválido: {e2}")
-                return None
-        return None
-    except Exception as e:
-        print(f"  ❌ Error inesperado con Gemini API: {e}")
-        return None
+                result = json.loads(raw_text)
+                return result
+            except json.JSONDecodeError as e:
+                import re
+                raw_text = re.sub(r',\s*}', '}', raw_text)
+                raw_text = re.sub(r',\s*\]', ']', raw_text)
+                try:
+                    return json.loads(raw_text)
+                except Exception as e2:
+                    print(f"  ❌ Gemini devolvió JSON inválido: {e2}")
+                    return None
+            return None
+        except ResourceExhausted as e:
+            if attempt < max_retries - 1:
+                print(f"  ⚠️  Cuota excedida (Error 429). Esperando 65 segundos (intento {attempt + 1}/{max_retries})...")
+                time.sleep(65)
+            else:
+                print(f"  ❌ Límite estricto de cuota alcanzado tras {max_retries} intentos. Abortando proceso.")
+                raise DailyQuotaExceeded(str(e))
+        except Exception as e:
+            print(f"  ❌ Error inesperado con Gemini API: {e}")
+            return None
+    return None
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CONSTRUCCIÓN DEL REGISTRO FINAL
@@ -732,26 +745,29 @@ def run_pipeline(start_date: str, end_date: str, is_backfill: bool = False):
     new_records = []
 
     import re
-    for i, item in enumerate(items_to_analyze, 1):
-        print(f"\n[{i:03d}/{len(items_to_analyze):03d}] {item.get('titulo', '')[:65]}...")
-        print(f"         Origen: {item.get('origen')} | Fecha: {item.get('fecha')}")
-
-        analysis = analyze_with_gemini(item, config)
-        if not analysis:
-            print(f"         ⚠️  Análisis fallido. Saltando.")
+    try:
+        for i, item in enumerate(items_to_analyze, 1):
+            print(f"\n[{i:03d}/{len(items_to_analyze):03d}] {item.get('titulo', '')[:65]}...")
+            print(f"         Origen: {item.get('origen')} | Fecha: {item.get('fecha')}")
+    
+            analysis = analyze_with_gemini(item, config)
+            if not analysis:
+                print(f"         ⚠️  Análisis fallido. Saltando.")
+                time.sleep(THROTTLE_SECONDS)
+                continue
+    
+            record = build_record(item, analysis)
+            new_records.append(record)
+    
+            # Log resumido
+            doctrina = record.get("clasificacion_doctrinal", {}).get("doctrina", "N/D")
+            obs = "🚨 OBSERVATORIO" if record.get("es_absurdo") else ""
+            print(f"         ✅ {record['id']} | {record['criticidad']} | "
+                  f"{record['impacto']} | {doctrina[:30]} {obs}")
+    
             time.sleep(THROTTLE_SECONDS)
-            continue
-
-        record = build_record(item, analysis)
-        new_records.append(record)
-
-        # Log resumido
-        doctrina = record.get("clasificacion_doctrinal", {}).get("doctrina", "N/D")
-        obs = "🚨 OBSERVATORIO" if record.get("es_absurdo") else ""
-        print(f"         ✅ {record['id']} | {record['criticidad']} | "
-              f"{record['impacto']} | {doctrina[:30]} {obs}")
-
-        time.sleep(THROTTLE_SECONDS)
+    except DailyQuotaExceeded:
+        print("\n⚠️ SALIDA DE EMERGENCIA: Límite de cuota excedido. Se guardará el progreso actual.")
 
     # ── Paso 5: Guardar con validación de integridad
     final_records = records + new_records
