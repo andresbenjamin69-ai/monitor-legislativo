@@ -1,89 +1,104 @@
 {
-  "version": "1.0",
-  "system_instruction": "Eres un economista senior especializado en políticas públicas, regulación industrial y finanzas públicas de la Argentina. Tu tarea es analizar proyectos de ley o decretos del Congreso de la Nación Argentina. REGLAS ESTRICTAS: (1) Basa tu análisis EXCLUSIVAMENTE en el articulado técnico del texto provisto. (2) NO incluyas suposiciones sobre variables macroeconómicas informales o no normadas (cotizaciones informales de moneda, inflación proyectada sin base legal, brechas cambiarias informales). (3) Siempre referencia el número de expediente y la fuente oficial provista en los datos de entrada. (4) Tu salida DEBE ser un objeto JSON válido con exactamente la estructura definida en output_schema. (5) NUNCA inventes datos. Si un campo no puede determinarse del texto, usa string vacío o array vacío.",
+  "version": "2.0",
+  "last_updated": "2026-08-05",
+
+  "system_instruction": "Eres el Cerebro Economista de EcoLey Alert: un sistema de inteligencia legislativa diseñado para directivos de empresas industriales argentinas. Tu función es transformar proyectos de ley y actos administrativos en inteligencia accionable para la toma de decisiones corporativas. REGLAS ABSOLUTAS: (1) Basá tu análisis EXCLUSIVAMENTE en el articulado técnico del texto provisto. (2) NO incluyas suposiciones sobre variables macroeconómicas informales o no normadas (cotizaciones informales, inflación proyectada sin base legal). (3) Siempre referenciar el expediente y la fuente oficial. (4) Tu salida DEBE ser un objeto JSON válido con exactamente la estructura definida en output_schema. (5) NUNCA inventés datos. Si un campo no puede determinarse, usá string vacío o array vacío. (6) La MINUTA debe ser accionable: un directivo debe poder reenviarla a su equipo legal sin modificarla. (7) Detectá con precisión quirúrgica si el proyecto afecta la cadena de valor de alguna industria, aunque el título no lo mencione explícitamente.",
 
   "output_schema": {
     "campos_obligatorios": [
-      "titulo_sintesis",
-      "comisiones",
-      "industrias_afectadas",
-      "analisis_macro",
-      "analisis_micro",
-      "clasificacion_doctrinal",
-      "criticidad",
-      "impacto",
-      "resumen_puntos",
-      "minuta",
-      "es_absurdo",
-      "critica_observatorio"
+      "titulo_sintesis", "tipo_norma", "comisiones", "industrias_afectadas",
+      "cadena_de_valor_afectada", "analisis_macro", "analisis_micro",
+      "analisis_laboral", "clasificacion_doctrinal", "criticidad", "urgencia",
+      "impacto", "horizonte_temporal", "resumen_puntos", "riesgos_regulatorios",
+      "oportunidades", "minuta", "es_absurdo", "critica_observatorio", "tags"
     ],
     "estructura": {
-      "titulo_sintesis": "string — Título corto (máx 90 caracteres) en español claro, sin tecnicismos innecesarios.",
-      "comisiones": "array de strings — Comisiones parlamentarias a las que fue girado el proyecto.",
-      "industrias_afectadas": "array de strings — Solo las industrias de la lista de industry_keywords que apliquen.",
+      "titulo_sintesis": "string — Título ejecutivo claro (máx 90 caracteres). Empezar con verbo de acción: Crea, Modifica, Prohíbe, Otorga, Establece.",
+      "tipo_norma": "string — Exactamente uno de los valores en valores_enum.tipo_norma.",
+      "comisiones": "array de strings — Comisiones parlamentarias a las que fue girado.",
+      "industrias_afectadas": "array de strings — Solo industrias de industry_keywords que apliquen. Vacío si ninguna aplica.",
+      "cadena_de_valor_afectada": "array de strings — Segmentos de la cadena de valor impactados. Ej: ['Logística / Transporte', 'Exportación'].",
       "analisis_macro": {
-        "tipo_politica": "string — Ej: 'Fiscal', 'Monetaria', 'Regulatoria', 'Comercial', 'Laboral'",
-        "resumen": "string — Impacto macroeconómico basado estrictamente en el articulado.",
-        "efectos_sobre_recaudacion": "string — Impacto directo sobre ingresos o egresos del Estado según el texto.",
-        "efectos_sobre_empleo": "string — Proyección de efectos sobre el mercado laboral según el articulado."
+        "tipo_politica": "string — Exactamente uno de los valores en valores_enum.tipo_politica.",
+        "resumen": "string — Impacto macroeconómico basado en el articulado. Máx 3 oraciones.",
+        "efectos_sobre_recaudacion": "string — Impacto directo sobre ingresos o egresos del Estado.",
+        "efectos_sobre_empleo": "string — Proyección de efectos sobre el mercado laboral.",
+        "efectos_sobre_comercio_exterior": "string — Impacto en exportaciones o importaciones."
       },
       "analisis_micro": {
-        "impacto_costos_operativos": "string — Efecto directo sobre costos de producción de las empresas afectadas.",
-        "barreras_de_entrada": "string — Si aumenta, reduce o no afecta las barreras de entrada al mercado.",
-        "impacto_pymes": "string — Efecto diferencial sobre Pymes versus grandes empresas, si aplica."
+        "impacto_costos_operativos": "string — Efecto directo sobre costos de producción.",
+        "barreras_de_entrada": "string — Aumenta, Reduce o Sin cambio. Explicar brevemente.",
+        "impacto_pymes": "string — Efecto diferencial sobre Pymes versus grandes empresas.",
+        "impacto_precios_al_consumidor": "string — Efecto estimado sobre precios finales.",
+        "sectores_ganadores": "array de strings — Sectores o actores que se benefician.",
+        "sectores_perdedores": "array de strings — Sectores o actores que se perjudican."
+      },
+      "analisis_laboral": {
+        "impacto_empleo_formal": "string — Efecto sobre el empleo registrado.",
+        "convenios_colectivos_afectados": "string — Si modifica o afecta CCT específicos.",
+        "impacto_autonomos_monotributo": "string — Efecto sobre trabajadores independientes."
       },
       "clasificacion_doctrinal": {
-        "doctrina": "string — Debe ser exactamente uno de los valores de doctrinal_categories.",
-        "descripcion": "string — Explicación de por qué el proyecto se clasifica en esa doctrina.",
-        "rumbo_economico_proyectado": "string — Tendencia de política económica que consolida este proyecto."
+        "doctrina": "string — Exactamente uno de los valores en valores_enum.doctrina.",
+        "descripcion": "string — Argumentación citando el artículo específico.",
+        "rumbo_economico_proyectado": "string — Tendencia de política económica que consolida."
       },
-      "criticidad": "string — 'Alta', 'Media' o 'Baja' según impacto en las industrias afectadas.",
-      "impacto": "string — 'Positivo', 'Negativo' o 'Neutral' para el sector productivo.",
-      "resumen_puntos": "array de strings — Exactamente 3 puntos clave del articulado que generan impacto económico.",
-      "minuta": "string — Memorándum ejecutivo formal (PARA/DE/ASUNTO/CUERPO/RECOMENDACIÓN) listo para elevar a directivos.",
-      "es_absurdo": "boolean — true si cumple uno o más criterios C1-C5 del observatorio.",
-      "critica_observatorio": "string — Vacío si es_absurdo es false. Si es true: argumentación técnica rigurosa con el criterio incumplido."
+      "criticidad": "string — Alta, Media o Baja según valores_enum.",
+      "urgencia": "string — Exactamente uno de los valores en valores_enum.urgencia.",
+      "impacto": "string — Positivo, Negativo o Neutral.",
+      "horizonte_temporal": "string — Exactamente uno de los valores en valores_enum.horizonte_temporal.",
+      "resumen_puntos": "array de exactamente 3 strings — 3 puntos clave del articulado con impacto económico.",
+      "riesgos_regulatorios": "array de strings — Riesgos concretos: multas, suspensiones, obligaciones nuevas. Vacío si no hay.",
+      "oportunidades": "array de strings — Oportunidades concretas: subsidios, exenciones. Vacío si no hay.",
+      "minuta": "string — Memorándum ejecutivo: PARA / DE: EcoLey Alert / ASUNTO / FECHA / SITUACIÓN / IMPACTO PARA NUESTRA EMPRESA / ACCIÓN RECOMENDADA / REFERENCIA.",
+      "es_absurdo": "boolean — true si el articulado cumple uno o más criterios C1-C6 del observatorio.",
+      "critica_observatorio": "string — Vacío si es_absurdo es false. Si es true: criterio incumplido, efecto perjudicial y alternativa consistente.",
+      "tags": "array de 3 a 7 strings — Etiquetas cortas para búsqueda. Ej: ['retenciones', 'soja', 'exportaciones']."
     },
     "valores_enum": {
       "criticidad": ["Alta", "Media", "Baja"],
       "impacto": ["Positivo", "Negativo", "Neutral"],
-      "doctrina": [
-        "Liberal / Desregulador",
-        "Keynesiano / Intervencionista",
-        "Desarrollista / Industrialista",
-        "Populista / Redistributivo",
-        "Neutro / Procedimental"
-      ]
+      "urgencia": ["Inmediata", "Próximas sesiones", "Mediano plazo", "Monitorear"],
+      "horizonte_temporal": ["Corto plazo (0-6 meses)", "Mediano plazo (6-24 meses)", "Largo plazo (+24 meses)"],
+      "tipo_norma": ["Proyecto de Ley", "Decreto PEN", "Resolución Ministerial", "Decisión Administrativa", "Acuerdo del Senado", "Declaración", "Otro"],
+      "tipo_politica": ["Fiscal", "Monetaria", "Regulatoria", "Comercial", "Laboral", "Ambiental", "Infraestructura", "Mixta"],
+      "doctrina": ["Liberal / Desregulador", "Keynesiano / Intervencionista", "Desarrollista / Industrialista", "Populista / Redistributivo", "Neutro / Procedimental"]
     }
   },
 
   "industry_keywords": {
-    "Agroindustria": ["retenciones", "exportaciones agrícolas", "silobolsa", "granos", "agro", "campo", "cosecha", "soja", "maíz", "trigo", "SENASA", "MAGyP"],
-    "Metalurgia": ["acero", "aluminio", "fundición", "siderurgia", "metalmecánica", "ADIMRA", "laminado", "hierro"],
-    "Software y Tecnología": ["economía del conocimiento", "software", "exportación de servicios", "tecnología", "startup", "CESSI", "servicios digitales"],
-    "Construcción": ["obra pública", "materiales de construcción", "UOCRA", "vivienda", "infraestructura", "cemento", "ladrillo"],
-    "Automotriz": ["autopartistas", "terminales automotrices", "ADEFA", "vehículos", "automóviles", "autoparte"],
-    "Comercio Minorista": ["pymes comerciales", "monotributo", "ventas al por menor", "CAME", "retail", "comercio"],
-    "Energía": ["tarifas eléctricas", "gas", "combustible", "biocombustibles", "CAMMESA", "YPF", "electricidad", "energías renovables"],
-    "Finanzas": ["sistema financiero", "BCRA", "entidades bancarias", "crédito", "tasas de interés", "Banco Central", "entidad financiera"],
-    "Alimentación": ["alimentos", "bebidas", "COPAL", "industria alimentaria", "nutrición", "supermercado", "cadena alimentaria"],
-    "Farmacéutica": ["medicamentos", "laboratorios", "ANMAT", "salud pública", "farmacia", "CAEME", "CILFA"]
+    "Agroindustria": ["retenciones", "exportaciones agrícolas", "silobolsa", "granos", "agro", "campo", "cosecha", "soja", "maíz", "trigo", "SENASA", "MAGyP", "cupo", "oleaginosas", "frigorífico", "faena"],
+    "Metalurgia y Siderurgia": ["acero", "aluminio", "fundición", "siderurgia", "metalmecánica", "ADIMRA", "laminado", "hierro", "tubos", "caños", "chapas"],
+    "Software y Economía del Conocimiento": ["economía del conocimiento", "software", "exportación de servicios", "tecnología", "startup", "CESSI", "servicios digitales", "videojuegos", "inteligencia artificial", "biotecnología", "LEK", "Ley 27506"],
+    "Construcción e Infraestructura": ["obra pública", "materiales de construcción", "UOCRA", "vivienda", "infraestructura", "cemento", "ladrillo", "hormigón", "PPP", "concesión vial"],
+    "Automotriz y Autopartes": ["autopartistas", "terminales automotrices", "ADEFA", "vehículos", "automóviles", "autoparte", "SMATA", "importación de autos"],
+    "Comercio Minorista y PYMES": ["pymes comerciales", "monotributo", "ventas al por menor", "CAME", "retail", "comercio", "habilitación comercial"],
+    "Energía y Combustibles": ["tarifas eléctricas", "gas", "combustible", "biocombustibles", "CAMMESA", "YPF", "electricidad", "energías renovables", "GNC", "nafta", "gasoducto", "oleoducto", "ENARSA", "Vaca Muerta"],
+    "Finanzas y Banca": ["sistema financiero", "BCRA", "entidades bancarias", "crédito", "tasas de interés", "Banco Central", "entidad financiera", "fintech", "criptomoneda", "SGR", "leasing", "factoring"],
+    "Alimentación y Bebidas": ["alimentos", "bebidas", "COPAL", "industria alimentaria", "nutrición", "supermercado", "cadena alimentaria", "rotulado", "etiquetado"],
+    "Farmacéutica y Salud": ["medicamentos", "laboratorios", "ANMAT", "salud pública", "farmacia", "CAEME", "CILFA", "bioequivalencia", "precios de medicamentos", "cannabis medicinal"],
+    "Logística y Transporte": ["transporte", "logística", "ferroviario", "automotor de cargas", "puertos", "cabotaje", "ORSNA", "flete", "camioneros", "FADEEAC"],
+    "Minería": ["minería", "litio", "cobre", "oro", "plata", "royalty", "regalías mineras", "exploración", "zona franca"],
+    "Textil e Indumentaria": ["textil", "indumentaria", "calzado", "confección", "FITA", "importación de telas", "prendas"],
+    "Turismo y Hotelería": ["turismo", "hoteles", "gastronomía", "INPROTUR", "vuelos", "agencias de viaje"],
+    "Telecomunicaciones y Medios": ["telecomunicaciones", "internet", "banda ancha", "ENACOM", "radiodifusión", "medios de comunicación", "cable", "telefonía"]
   },
 
   "doctrinal_categories": {
-    "Liberal / Desregulador": "Proyectos que buscan reducir carga tributaria, eliminar regulaciones, privatizar servicios o facilitar la libre competencia sin intervención estatal directa. Típico de bloques como La Libertad Avanza o PRO en sus versiones más ortodoxas.",
-    "Keynesiano / Intervencionista": "Proyectos que aumentan el gasto público, regulan precios, intervienen mercados, restringen importaciones o expanden la administración del Estado. Típico de bloques como Unión por la Patria o kirchnerismo.",
-    "Desarrollista / Industrialista": "Proyectos de incentivos fiscales dirigidos a sectores productivos estratégicos para la sustitución de importaciones o la industrialización. Enfoque pragmático con intervención selectiva del Estado.",
-    "Populista / Redistributivo": "Proyectos de transferencias directas, congelamientos de precios, moratoria de deudas o beneficios sin financiamiento identificado en el articulado. Impacto fiscal sin contrapartida de ingresos.",
-    "Neutro / Procedimental": "Proyectos administrativos, de nomenclatura, de organización interna del Estado o sin impacto económico directo identificable en el articulado."
+    "Liberal / Desregulador": "Proyectos que buscan reducir carga tributaria, eliminar regulaciones, privatizar servicios o facilitar la libre competencia sin intervención estatal directa. Indicadores: desregulación, libre mercado, reducción impositiva, privatización, eliminación de requisitos.",
+    "Keynesiano / Intervencionista": "Proyectos que aumentan el gasto público, regulan precios, intervienen mercados, restringen importaciones o expanden la administración del Estado. Indicadores: precio máximo, cupo de exportación, fondo público, subsidio, intervención.",
+    "Desarrollista / Industrialista": "Proyectos de incentivos fiscales dirigidos a sectores productivos estratégicos para la sustitución de importaciones o la industrialización. Indicadores: régimen de promoción, zona franca industrial, reducción de aranceles a insumos, crédito BICE/FONDEP.",
+    "Populista / Redistributivo": "Proyectos de transferencias directas, congelamientos de precios, moratorias de deudas o beneficios sin financiamiento identificado. Indicadores: moratoria, congelamiento, bono, sin financiamiento explícito.",
+    "Neutro / Procedimental": "Proyectos administrativos, de nomenclatura, de organización interna del Estado, designaciones, declaraciones de interés o sin impacto económico directo identificable."
   },
 
   "observatorio_rules": {
-    "instruccion": "Clasifica el proyecto como es_absurdo: true si el articulado cumple UNO O MÁS de los criterios C1 a C5. La evaluación debe basarse exclusivamente en el texto del articulado provisto. Si es_absurdo es true, el campo critica_observatorio DEBE contener argumentación técnica rigurosa indicando: (a) qué criterio exacto se cumple, (b) por qué genera un efecto perjudicial medible, (c) qué alternativa económicamente consistente existiría.",
-    "C1": "CONTROL DE PRECIOS SIN REVISIÓN: El proyecto fija precios máximos o mínimos obligatorios en mercados de insumos industriales o bienes de consumo masivo sin definir un mecanismo de revisión periódica en el articulado. Esta medida genera desabastecimiento al eliminar el incentivo de oferta.",
-    "C2": "GASTO SIN FINANCIAMIENTO: El proyecto crea una obligación de gasto público nueva (fondo, subsidio, beneficio, prestación) sin identificar la partida presupuestaria específica ni la fuente de financiamiento en su articulado.",
-    "C3": "VIOLACIÓN CONTRACTUAL: El proyecto modifica o extingue unilateralmente contratos privados vigentes (arrendamientos, préstamos, concesiones) sin contemplar compensación económica ni período de transitoriedad razonable.",
-    "C4": "CONTRADICCIÓN MICROECONÓMICA: El proyecto propone medidas que generan una contradicción estructural evidente con principios básicos de la microeconomía: prohíbe la oferta de un bien sin establecer una fuente sustituta, fija cantidades obligatorias de producción sin considerar la estructura de costos, o crea obligaciones de venta por debajo del costo de producción.",
-    "C5": "EMERGENCIA INDEFINIDA: El proyecto declara o prorroga una 'emergencia' económica, social o sectorial sin establecer un plazo de vigencia concreto o un mecanismo de revisión automática en el articulado."
+    "instruccion": "Evaluá con los criterios C1-C6. Si cumple UNO O MÁS, marcá es_absurdo: true y completá critica_observatorio con (a) criterio exacto, (b) efecto perjudicial medible, (c) alternativa económicamente consistente.",
+    "C1": "CONTROL DE PRECIOS SIN REVISIÓN: Fija precios máximos o mínimos obligatorios sin mecanismo de revisión periódica. Efecto: desabastecimiento.",
+    "C2": "GASTO SIN FINANCIAMIENTO: Crea obligación de gasto nuevo sin identificar partida presupuestaria ni fuente de financiamiento.",
+    "C3": "VIOLACIÓN CONTRACTUAL: Modifica o extingue unilateralmente contratos privados vigentes sin compensación ni transitoriedad.",
+    "C4": "CONTRADICCIÓN MICROECONÓMICA: Prohíbe oferta sin fuente sustituta, fija cantidades sin considerar costos, o crea obligaciones de venta por debajo del costo.",
+    "C5": "EMERGENCIA INDEFINIDA: Declara o prorroga emergencia sin plazo de vigencia concreto o mecanismo de revisión automática.",
+    "C6": "DOBLE REGULACIÓN CONTRADICTORIA: Crea obligaciones que contradicen directamente normas vigentes sin derogarlas, generando inseguridad jurídica."
   }
 }
