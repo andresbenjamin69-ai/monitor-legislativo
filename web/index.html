@@ -3,405 +3,317 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoLey Alert — Monitor Legislativo Industrial Argentina</title>
-  <meta name="description" content="Plataforma de auditoría legislativa y análisis macroeconómico y microeconómico del Congreso de la Nación Argentina. Proyectos de ley clasificados por doctrina, industria y bloque político." />
-  <meta name="author" content="EcoLey Alert" />
+  <title>EcoLey Alert — Monitor Legislativo</title>
+  <meta name="description" content="Plataforma SaaS de auditoría legislativa y análisis económico." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ══════════════════════════════════════════════════════ HEADER -->
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <div class="header-brand">
-        <span class="header-flag">🇦🇷</span>
-        <div>
-          <h1 class="header-title">EcoLey Alert</h1>
-          <p class="header-subtitle">Monitor Legislativo Industrial · Congreso de la Nación Argentina</p>
+  
+  <div class="app-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">🇦🇷</div>
+        <div class="brand-text">
+          <h1 class="brand-title">EcoLey Alert</h1>
+          <span class="brand-subtitle">Monitor Legislativo</span>
         </div>
       </div>
-      <div class="header-meta">
-        <span class="header-date" id="header-date">—</span>
-        <span class="header-stats" id="header-stats">Cargando...</span>
-      </div>
-    </div>
-    <!-- Banda decorativa estilo FT -->
-    <div class="header-rule"></div>
-  </header>
-
-  <!-- ══════════════════════════════════════════════════════ NAV TABS -->
-  <nav class="main-nav" id="main-nav" role="navigation" aria-label="Secciones principales">
-    <div class="nav-inner">
-      <div class="nav-tabs" role="tablist">
-        <button class="nav-tab active" id="tab-todos" role="tab" aria-selected="true" data-section="legislativo">
+      
+      <nav class="sidebar-nav">
+        <p class="nav-section-title">Análisis</p>
+        <button class="nav-item active" id="tab-todos" data-section="legislativo">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
           Todos los Proyectos
         </button>
-        <button class="nav-tab" id="tab-debate" role="tab" aria-selected="false" data-section="legislativo" data-estado="En Debate">
+        <button class="nav-item" id="tab-debate" data-section="legislativo" data-estado="En Debate">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           En Debate
         </button>
-        <button class="nav-tab" id="tab-aprobados" role="tab" aria-selected="false" data-section="legislativo" data-estado="Aprobado">
+        <button class="nav-item" id="tab-aprobados" data-section="legislativo" data-estado="Aprobado">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Aprobados
         </button>
-        <button class="nav-tab observatorio-tab" id="tab-observatorio" role="tab" aria-selected="false" data-section="observatorio">
-          Observatorio de Coherencia
+        <button class="nav-item nav-item-alert" id="tab-observatorio" data-section="observatorio">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Observatorio
         </button>
-        <button class="nav-tab" id="tab-config" role="tab" aria-selected="false" data-section="configuracion">
+        
+        <p class="nav-section-title mt-6">Sistema</p>
+        <button class="nav-item" id="tab-config" data-section="configuracion">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           Configuración
         </button>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="footer-stats">
+          <div id="header-date" class="text-sm font-medium text-slate-500 mb-1">—</div>
+          <div id="header-stats" class="text-xs text-slate-400">Cargando base de datos...</div>
+        </div>
       </div>
-    </div>
-  </nav>
+    </aside>
 
-  <!-- ══════════════════════════════════════════════════════ FILTROS -->
-  <section class="filter-bar" id="filter-bar" aria-label="Filtros de búsqueda">
-    <div class="filter-inner">
-      <div class="filter-group">
-        <label for="filter-camara" class="filter-label">Cámara</label>
-        <select id="filter-camara" class="filter-select">
-          <option value="">Todas las Cámaras</option>
-          <option value="Cámara de Diputados">Diputados</option>
-          <option value="Cámara de Senadores">Senadores</option>
-          <option value="Boletín Oficial">Boletín Oficial</option>
-          <option value="Poder Ejecutivo">Poder Ejecutivo</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-doctrina" class="filter-label">Doctrina</label>
-        <select id="filter-doctrina" class="filter-select">
-          <option value="">Todas las Doctrinas</option>
-          <option value="Liberal / Desregulador">Liberal / Desregulador</option>
-          <option value="Keynesiano / Intervencionista">Keynesiano / Intervencionista</option>
-          <option value="Desarrollista / Industrialista">Desarrollista / Industrialista</option>
-          <option value="Populista / Redistributivo">Populista / Redistributivo</option>
-          <option value="Neutro / Procedimental">Neutro / Procedimental</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-industria" class="filter-label">Industria</label>
-        <select id="filter-industria" class="filter-select">
-          <option value="">Todas las Industrias</option>
-          <option value="Agroindustria">Agroindustria</option>
-          <option value="Metalurgia">Metalurgia</option>
-          <option value="Software y Tecnología">Software y Tecnología</option>
-          <option value="Construcción">Construcción</option>
-          <option value="Automotriz">Automotriz</option>
-          <option value="Comercio Minorista">Comercio Minorista</option>
-          <option value="Energía">Energía</option>
-          <option value="Finanzas">Finanzas</option>
-          <option value="Alimentación">Alimentación</option>
-          <option value="Farmacéutica">Farmacéutica</option>
-        </select>
-      </div>
-      <div class="filter-group filter-group--search">
-        <label for="filter-texto" class="filter-label">Búsqueda</label>
-        <input type="search" id="filter-texto" class="filter-input" placeholder="Buscar por título, expediente o autor..." />
-      </div>
-      <button class="filter-reset" id="filter-reset" title="Limpiar filtros">✕ Limpiar</button>
-    </div>
-    <div class="filter-status" id="filter-status"></div>
-  </section>
+    <!-- MAIN CONTENT -->
+    <main class="main-wrapper">
+      
+      <!-- TOP FILTER BAR -->
+      <header class="glass-header" id="filter-bar">
+        <div class="filter-grid">
+          <div class="filter-control">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="filter-texto" class="glass-input" placeholder="Buscar expedientes, títulos..." />
+          </div>
+          
+          <select id="filter-camara" class="glass-select">
+            <option value="">Cámara (Todas)</option>
+            <option value="Cámara de Diputados">Diputados</option>
+            <option value="Cámara de Senadores">Senadores</option>
+            <option value="Boletín Oficial">Boletín Oficial</option>
+          </select>
+          
+          <select id="filter-doctrina" class="glass-select">
+            <option value="">Doctrina (Todas)</option>
+            <option value="Liberal / Desregulador">Liberal / Desregulador</option>
+            <option value="Keynesiano / Intervencionista">Keynesiano / Intervencionista</option>
+            <option value="Desarrollista / Industrialista">Desarrollista / Industrialista</option>
+            <option value="Populista / Redistributivo">Populista / Redistributivo</option>
+            <option value="Neutro / Procedimental">Neutro / Procedimental</option>
+          </select>
+          
+          <select id="filter-industria" class="glass-select">
+            <option value="">Industria (Todas)</option>
+            <option value="Agroindustria">Agroindustria</option>
+            <option value="Metalurgia">Metalurgia</option>
+            <option value="Software y Tecnología">Software y Tecnología</option>
+            <option value="Construcción">Construcción</option>
+            <option value="Automotriz">Automotriz</option>
+            <option value="Comercio Minorista">Comercio Minorista</option>
+            <option value="Energía">Energía</option>
+            <option value="Finanzas">Finanzas</option>
+            <option value="Alimentación">Alimentación</option>
+            <option value="Farmacéutica">Farmacéutica</option>
+          </select>
+          
+          <button class="btn-icon-subtle" id="filter-reset" title="Limpiar filtros">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="filter-status text-xs text-slate-500 mt-2" id="filter-status"></div>
+      </header>
 
-  <!-- ══════════════════════════════════════════════════════ CONTENIDO PRINCIPAL -->
-  <main class="main-content" id="main-content">
+      <!-- CONTENT SECTIONS -->
+      <div class="content-scroll">
+        
+        <!-- SECTION: LEGISLATIVO -->
+        <section class="section-glass" id="section-legislativo">
+          <div class="table-container">
+            <table class="glass-table" id="data-table">
+              <thead>
+                <tr>
+                  <th>Expediente</th>
+                  <th>Fecha</th>
+                  <th>Cámara</th>
+                  <th>Síntesis</th>
+                  <th>Doctrina</th>
+                  <th>Criticidad</th>
+                  <th>Impacto</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <tr>
+                  <td colspan="8">
+                    <div class="skeleton-loader">
+                      <div class="skeleton-row"></div>
+                      <div class="skeleton-row"></div>
+                      <div class="skeleton-row"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="empty-state hidden" id="table-empty">
+            <div class="empty-icon">🔍</div>
+            <h3>No hay resultados</h3>
+            <p>Intenta ajustar los filtros de búsqueda.</p>
+            <button class="btn-primary mt-4" id="empty-reset">Limpiar filtros</button>
+          </div>
+        </section>
 
-    <!-- ── Sección Legislativo (tabla principal) -->
-    <section class="section-legislativo" id="section-legislativo">
-      <div class="table-wrapper">
-        <table class="data-table" id="data-table" role="grid" aria-label="Tabla de proyectos legislativos">
-          <thead>
-            <tr>
-              <th class="col-expediente">Expediente</th>
-              <th class="col-fecha">Fecha</th>
-              <th class="col-camara">Cámara</th>
-              <th class="col-sintesis">Síntesis</th>
-              <th class="col-doctrina">Doctrina</th>
-              <th class="col-criticidad">Criticidad</th>
-              <th class="col-impacto">Impacto</th>
-              <th class="col-estado">Estado</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-            <tr class="table-loading">
-              <td colspan="8">
-                <div class="loading-spinner">
-                  <div class="spinner"></div>
-                  <span>Cargando base de datos legislativa...</span>
+        <!-- SECTION: OBSERVATORIO -->
+        <section class="section-glass hidden" id="section-observatorio">
+          <div class="section-header">
+            <h2>Observatorio de Coherencia</h2>
+            <p>Proyectos con contradicciones técnicas económicas fundamentales.</p>
+          </div>
+          <div class="observatorio-grid" id="observatorio-grid">
+            <!-- JS Populated -->
+          </div>
+          <div class="empty-state hidden" id="observatorio-empty">
+            <div class="empty-icon">✨</div>
+            <h3>Todo en orden</h3>
+            <p>No se detectaron proyectos con inconsistencias económicas severas.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: CONFIGURACION -->
+        <section class="section-glass hidden" id="section-configuracion">
+          <div class="config-grid">
+            
+            <div class="glass-card">
+              <h3>Importación de Históricos</h3>
+              <p class="text-sm text-slate-500 mb-4">Ejecuta el scraper en la nube. Requiere un Token de GitHub (PAT).</p>
+              
+              <div class="form-grid">
+                <div class="input-group">
+                  <label>Usuario/Org GitHub</label>
+                  <input type="text" id="cfg-owner" class="glass-input" placeholder="tu-usuario" />
                 </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-empty hidden" id="table-empty">
-        <p>No se encontraron proyectos con los filtros seleccionados.</p>
-        <button class="btn-link" id="empty-reset">Limpiar filtros</button>
-      </div>
-    </section>
+                <div class="input-group">
+                  <label>Repositorio</label>
+                  <input type="text" id="cfg-repo" class="glass-input" placeholder="monitor-legislativo" />
+                </div>
+                <div class="input-group">
+                  <label>Fecha Inicio</label>
+                  <input type="date" id="cfg-start" class="glass-input" />
+                </div>
+                <div class="input-group">
+                  <label>Fecha Fin</label>
+                  <input type="date" id="cfg-end" class="glass-input" />
+                </div>
+                <div class="input-group full-width">
+                  <label>Token de GitHub</label>
+                  <input type="password" id="cfg-token" class="glass-input" placeholder="ghp_..." />
+                </div>
+              </div>
+              
+              <div class="action-bar mt-6">
+                <button class="btn-secondary" id="btn-save-config">Guardar</button>
+                <button class="btn-primary" id="btn-trigger-backfill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" class="mr-2 inline"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Disparar Backfill
+                </button>
+              </div>
+              <div id="backfill-status" class="mt-4 text-sm font-medium"></div>
+            </div>
 
-    <!-- ── Sección Observatorio de Coherencia -->
-    <section class="section-observatorio hidden" id="section-observatorio">
-      <div class="observatorio-header">
-        <h2 class="observatorio-title">Observatorio de Coherencia Económica</h2>
-        <p class="observatorio-desc">
-          Proyectos que presentan contradicciones técnicas con principios económicos fundamentales,
-          identificadas por el Cerebro Economista según los criterios C1–C5.
-        </p>
-      </div>
-      <div class="observatorio-grid" id="observatorio-grid">
-        <!-- Populated by app.js -->
-      </div>
-      <div class="observatorio-empty hidden" id="observatorio-empty">
-        <p>No se detectaron proyectos con inconsistencias económicas en la base de datos actual.</p>
-      </div>
-    </section>
+            <div class="glass-card">
+              <h3>Editor del Cerebro IA</h3>
+              <p class="text-sm text-slate-500 mb-4">Modifica el JSON de prompt que guía el análisis económico.</p>
+              
+              <textarea id="prompt-editor" class="glass-textarea" rows="15" placeholder="Cargando..."></textarea>
+              
+              <div class="action-bar mt-6">
+                <button class="btn-secondary" id="btn-load-prompt">Recargar</button>
+                <button class="btn-primary" id="btn-save-prompt">Subir a GitHub</button>
+              </div>
+              <div id="prompt-status" class="mt-4 text-sm font-medium"></div>
+            </div>
 
-    <!-- ── Sección Configuración -->
-    <section class="section-configuracion hidden" id="section-configuracion">
-      <div class="config-container">
-
-        <div class="config-block">
-          <h2 class="config-title">Importación de Históricos</h2>
-          <p class="config-desc">
-            Dispara un análisis retrospectivo en la nube. Requiere un
-            <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Token de GitHub (PAT)</a>
-            con permiso <code>workflow</code>.
-          </p>
-          <div class="config-warning">
-            ⚠️ <strong>Seguridad:</strong> El token se guarda únicamente en este navegador (localStorage).
-            No usar en computadoras compartidas o públicas.
-            Cada backfill consume entre 15–20 minutos de GitHub Actions.
           </div>
-          <div class="config-form" id="backfill-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cfg-owner" class="form-label">Usuario / Organización GitHub</label>
-                <input type="text" id="cfg-owner" class="form-input" placeholder="tu-usuario" />
-              </div>
-              <div class="form-group">
-                <label for="cfg-repo" class="form-label">Repositorio</label>
-                <input type="text" id="cfg-repo" class="form-input" placeholder="monitor-legislativo" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cfg-start" class="form-label">Fecha Inicio</label>
-                <input type="date" id="cfg-start" class="form-input" />
-              </div>
-              <div class="form-group">
-                <label for="cfg-end" class="form-label">Fecha Fin</label>
-                <input type="date" id="cfg-end" class="form-input" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group form-group--full">
-                <label for="cfg-token" class="form-label">Token de GitHub (PAT)</label>
-                <input type="password" id="cfg-token" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
-              </div>
-            </div>
-            <div class="form-actions">
-              <button class="btn-primary" id="btn-save-config">Guardar Configuración</button>
-              <button class="btn-secondary" id="btn-trigger-backfill">
-                🚀 Disparar Importación Histórica
-              </button>
-            </div>
-            <div class="config-status" id="backfill-status"></div>
-          </div>
-        </div>
-
-        <div class="config-block">
-          <h2 class="config-title">Editor de Prompt del Cerebro Economista</h2>
-          <p class="config-desc">
-            Modifica las directrices del análisis. Al guardar, se hace commit directo a
-            <code>config/prompt_config.json</code> en el repositorio.
-          </p>
-          <textarea class="prompt-editor" id="prompt-editor" rows="20" spellcheck="false"
-            placeholder="Cargando prompt_config.json..."></textarea>
-          <div class="form-actions">
-            <button class="btn-secondary" id="btn-load-prompt">↓ Cargar desde Repo</button>
-            <button class="btn-primary" id="btn-save-prompt">💾 Guardar Prompt en Repo</button>
-          </div>
-          <div class="config-status" id="prompt-status"></div>
-        </div>
+        </section>
 
       </div>
-    </section>
+    </main>
+  </div>
 
-  </main>
-
-  <!-- ══════════════════════════════════════════════════════ PANEL MEMORÁNDUM (DRAWER) -->
-  <aside class="memo-panel hidden" id="memo-panel" role="complementary" aria-label="Memorándum ejecutivo">
-    <div class="memo-overlay" id="memo-overlay"></div>
-    <div class="memo-drawer">
-      <div class="memo-header">
-        <div>
-          <span class="memo-badge" id="memo-badge">En Debate</span>
-          <span class="memo-vinculacion hidden" id="memo-vinculacion">⚠️ Vinculación pendiente</span>
+  <!-- PANEL MEMORANDUM (DRAWER) -->
+  <aside class="glass-drawer hidden" id="memo-panel">
+    <div class="drawer-overlay" id="memo-overlay"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-badges">
+          <span class="badge" id="memo-badge">En Debate</span>
+          <span class="badge badge-warning hidden" id="memo-vinculacion">Falta Vincular</span>
         </div>
-        <div class="memo-header-actions">
-          <button class="btn-icon" id="btn-copy-minuta" title="Copiar minuta">📋 Copiar Minuta</button>
-          <button class="btn-icon" id="btn-print" title="Imprimir / Exportar PDF">🖨️ Imprimir</button>
-          <button class="btn-icon btn-close" id="btn-close-memo" title="Cerrar">✕</button>
+        <div class="drawer-actions">
+          <button class="btn-icon-subtle" id="btn-copy-minuta" title="Copiar minuta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+          <button class="btn-icon-subtle" id="btn-print" title="Imprimir">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </button>
+          <button class="btn-icon-subtle" id="btn-close-memo" title="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
       </div>
 
-      <div class="memo-body" id="memo-body">
+      <div class="drawer-scroll" id="memo-body">
+        
+        <div class="drawer-meta-grid">
+          <div class="meta-item"><span class="meta-label">Expediente</span><span class="meta-value mono" id="memo-id"></span></div>
+          <div class="meta-item"><span class="meta-label">Cámara</span><span class="meta-value" id="memo-origen"></span></div>
+          <div class="meta-item"><span class="meta-label">Fecha</span><span class="meta-value" id="memo-fecha"></span></div>
+          <div class="meta-item"><span class="meta-label">Autor</span><span class="meta-value" id="memo-autor"></span></div>
+          <div class="meta-item"><span class="meta-label">Bloque</span><span class="meta-value" id="memo-bloque"></span></div>
+          <div class="meta-item"><span class="meta-label">Fuente</span><a href="#" class="meta-link" id="memo-link" target="_blank">Ver Oficial ↗</a></div>
+          <div class="meta-item hidden" id="row-aprobacion"><span class="meta-label">Aprobado</span><span class="meta-value" id="memo-fecha-aprobacion"></span></div>
+          <div class="meta-item hidden" id="row-ley"><span class="meta-label">Ley Nro</span><span class="meta-value mono" id="memo-ley"></span></div>
+          <div class="meta-item hidden" id="row-boletin"><span class="meta-label">B.O.</span><a href="#" class="meta-link" id="memo-link-bora" target="_blank">Ver B.O. ↗</a></div>
+        </div>
 
-        <div class="memo-section memo-identificacion">
-          <div class="memo-row">
-            <span class="memo-label">Expediente</span>
-            <span class="memo-value mono" id="memo-id">—</span>
-          </div>
-          <div class="memo-row">
-            <span class="memo-label">Cámara</span>
-            <span class="memo-value" id="memo-origen">—</span>
-          </div>
-          <div class="memo-row">
-            <span class="memo-label">Autor</span>
-            <span class="memo-value" id="memo-autor">—</span>
-          </div>
-          <div class="memo-row">
-            <span class="memo-label">Bloque</span>
-            <span class="memo-value" id="memo-bloque">—</span>
-          </div>
-          <div class="memo-row">
-            <span class="memo-label">Ingresado</span>
-            <span class="memo-value" id="memo-fecha">—</span>
-          </div>
-          <div class="memo-row" id="row-aprobacion" style="display:none">
-            <span class="memo-label">Aprobado</span>
-            <span class="memo-value" id="memo-fecha-aprobacion">—</span>
-          </div>
-          <div class="memo-row" id="row-ley" style="display:none">
-            <span class="memo-label">Nro. Ley</span>
-            <span class="memo-value mono" id="memo-ley">—</span>
-          </div>
-          <div class="memo-row">
-            <span class="memo-label">Fuente</span>
-            <a class="memo-link" id="memo-link" href="#" target="_blank" rel="noopener">Ver fuente oficial ↗</a>
-          </div>
-          <div class="memo-row" id="row-boletin" style="display:none">
-            <span class="memo-label">Boletín Oficial</span>
-            <a class="memo-link" id="memo-link-bora" href="#" target="_blank" rel="noopener">Ver B.O. ↗</a>
+        <h2 class="drawer-title" id="memo-titulo"></h2>
+        <p class="drawer-synopsis" id="memo-sintesis"></p>
+        <div class="drawer-tags" id="memo-tags"></div>
+
+        <div class="drawer-divider"></div>
+
+        <div class="drawer-section">
+          <h3>📊 Análisis Macroeconómico</h3>
+          <div class="glass-infobox">
+            <div class="info-row"><span class="info-label">Enfoque:</span> <strong id="memo-macro-tipo"></strong></div>
+            <p class="info-text mt-2" id="memo-macro-resumen"></p>
+            <div class="info-row mt-2"><span class="info-label">Recaudación:</span> <span id="memo-macro-recaudacion"></span></div>
+            <div class="info-row"><span class="info-label">Empleo:</span> <span id="memo-macro-empleo"></span></div>
           </div>
         </div>
 
-        <div class="memo-divider"></div>
-
-        <h2 class="memo-titulo" id="memo-titulo">—</h2>
-        <p class="memo-sintesis" id="memo-sintesis">—</p>
-
-        <div class="memo-tags" id="memo-tags"></div>
-
-        <div class="memo-divider"></div>
-
-        <!-- Análisis Macroeconómico -->
-        <details class="memo-accordion" open>
-          <summary class="memo-accordion-title">Análisis Macroeconómico</summary>
-          <div class="memo-accordion-body">
-            <div class="memo-row">
-              <span class="memo-label">Tipo de Política</span>
-              <span class="memo-value" id="memo-macro-tipo">—</span>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Resumen</span>
-              <p class="memo-text" id="memo-macro-resumen">—</p>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Efectos sobre Recaudación</span>
-              <p class="memo-text" id="memo-macro-recaudacion">—</p>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Efectos sobre Empleo</span>
-              <p class="memo-text" id="memo-macro-empleo">—</p>
-            </div>
+        <div class="drawer-section">
+          <h3>🔬 Análisis Microeconómico</h3>
+          <div class="glass-infobox">
+            <div class="info-row"><span class="info-label">Costos Operativos:</span> <span id="memo-micro-costos"></span></div>
+            <div class="info-row"><span class="info-label">Barreras de Entrada:</span> <span id="memo-micro-barreras"></span></div>
+            <div class="info-row"><span class="info-label">Impacto en PyMEs:</span> <span id="memo-micro-pymes"></span></div>
           </div>
-        </details>
+        </div>
 
-        <!-- Análisis Microeconómico -->
-        <details class="memo-accordion">
-          <summary class="memo-accordion-title">Análisis Microeconómico</summary>
-          <div class="memo-accordion-body">
-            <div class="memo-field">
-              <span class="memo-label">Impacto en Costos Operativos</span>
-              <p class="memo-text" id="memo-micro-costos">—</p>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Barreras de Entrada</span>
-              <p class="memo-text" id="memo-micro-barreras">—</p>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Impacto en PyMEs</span>
-              <p class="memo-text" id="memo-micro-pymes">—</p>
-            </div>
+        <div class="drawer-section">
+          <h3>⚖️ Clasificación Doctrinal</h3>
+          <div class="glass-infobox">
+            <div class="info-row"><span class="info-label">Corriente:</span> <strong id="memo-doctrina"></strong></div>
+            <p class="info-text mt-2" id="memo-doctrina-desc"></p>
+            <div class="info-row mt-2"><span class="info-label">Rumbo:</span> <span id="memo-rumbo"></span></div>
           </div>
-        </details>
+        </div>
 
-        <!-- Clasificación Doctrinal -->
-        <details class="memo-accordion">
-          <summary class="memo-accordion-title">Clasificación Doctrinal</summary>
-          <div class="memo-accordion-body">
-            <div class="memo-row">
-              <span class="memo-label">Corriente</span>
-              <span class="memo-value" id="memo-doctrina">—</span>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Fundamento</span>
-              <p class="memo-text" id="memo-doctrina-desc">—</p>
-            </div>
-            <div class="memo-field">
-              <span class="memo-label">Rumbo Proyectado</span>
-              <p class="memo-text" id="memo-rumbo">—</p>
-            </div>
+        <div class="drawer-section">
+          <h3>📌 Puntos Clave</h3>
+          <ul class="key-points-list" id="memo-puntos"></ul>
+        </div>
+
+        <div class="drawer-section">
+          <h3>📄 Memorándum Ejecutivo</h3>
+          <div class="glass-minuta">
+            <pre id="memo-minuta"></pre>
           </div>
-        </details>
+        </div>
 
-        <!-- Puntos Clave -->
-        <details class="memo-accordion" open>
-          <summary class="memo-accordion-title">Puntos Clave del Articulado</summary>
-          <div class="memo-accordion-body">
-            <ul class="memo-puntos" id="memo-puntos"></ul>
-          </div>
-        </details>
-
-        <!-- Memorándum Ejecutivo -->
-        <details class="memo-accordion memo-minuta-accordion" open>
-          <summary class="memo-accordion-title">📄 Memorándum Ejecutivo</summary>
-          <div class="memo-accordion-body">
-            <pre class="memo-minuta" id="memo-minuta">—</pre>
-          </div>
-        </details>
-
-        <!-- Observatorio (solo si es_absurdo) -->
-        <div class="memo-observatorio hidden" id="memo-observatorio">
-          <div class="memo-divider"></div>
-          <div class="observatorio-alert">
-            <h4 class="obs-alert-title">🚨 Observatorio de Coherencia Económica</h4>
-            <p class="memo-text" id="memo-critica">—</p>
+        <div class="drawer-section hidden" id="memo-observatorio">
+          <div class="glass-alert">
+            <h4>🚨 Observatorio de Coherencia</h4>
+            <p id="memo-critica"></p>
           </div>
         </div>
 
       </div>
     </div>
   </aside>
-
-  <!-- ══════════════════════════════════════════════════════ FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-text">
-        <strong>EcoLey Alert</strong> — Monitor Legislativo Industrial Argentina.
-        Los datos provienen de fuentes oficiales:
-        <a href="https://datos.hcdn.gob.ar/" target="_blank" rel="noopener">datos.hcdn.gob.ar</a>,
-        <a href="https://api.argentinadatos.com/" target="_blank" rel="noopener">api.argentinadatos.com</a> y
-        <a href="https://www.boletinoficial.gob.ar/" target="_blank" rel="noopener">boletinoficial.gob.ar</a>.
-      </p>
-      <p class="footer-disclaimer">
-        El análisis económico es generado por IA (Gemini 1.5 Flash) y debe ser verificado por un profesional antes de tomar decisiones. Todo análisis incluye el link a la fuente legislativa oficial.
-      </p>
-    </div>
-  </footer>
 
   <script src="app.js"></script>
 </body>
