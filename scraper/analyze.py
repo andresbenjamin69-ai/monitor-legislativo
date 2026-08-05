@@ -197,12 +197,16 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
     """
     Fuente: https://datos.hcdn.gob.ar/ (API CKAN oficial HCDN)
     Paso 1: Obtener UUID real del recurso via package_show
-    Paso 2: Consultar datastore_search con ese UUID
-    Fallback: scraping HTML del buscador de proyectos.
+    Paso 2: Filtrar por fecha usando SQL (datastore_search_sql) — 1 sola request
+    Fallback: paginacion completa o scraping HTML.
+
+    NOTA IMPORTANTE: La base CKAN tiene retraso de ~1 mes.
+    El registro mas reciente conocido es 2026-06-30.
+    Si se piden fechas de julio/agosto 2026 y hay 0 resultados, es NORMAL.
     """
     items = []
 
-    print("  → API CKAN (Proyectos Parlamentarios)...")
+    print("  -> API CKAN (Proyectos Parlamentarios)...")
     try:
         # PASO 1: Obtener el UUID real del recurso
         pkg_url = "https://datos.hcdn.gob.ar/api/3/action/package_show"
@@ -210,97 +214,76 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
 
         resource_id = None
         if pkg_r.status_code == 200:
-            pkg_data = pkg_r.json()
-            resources = pkg_data.get("result", {}).get("resources", [])
-            # Buscar el recurso JSON o CSV con datastore activo
+            resources = pkg_r.json().get("result", {}).get("resources", [])
+            # Preferir recurso CSV (funciona mejor con SQL)
             for res in resources:
-                if res.get("datastore_active") or res.get("format", "").upper() in ("JSON", "CSV"):
+                if res.get("format", "").upper() == "CSV":
                     resource_id = res.get("id")
                     break
-            # Fallback al UUID conocido si no se encontró
             if not resource_id:
-                resource_id = "10953cf9-e851-4187-bb94-356b7256e112"
-        else:
-            # Si package_show falla, usar UUID conocido
-            resource_id = "10953cf9-e851-4187-bb94-356b7256e112"
+                for res in resources:
+                    if res.get("datastore_active") or res.get("format", "").upper() in ("JSON", "CSV"):
+                        resource_id = res.get("id")
+                        break
+        # Fallback UUID CSV conocido
+        if not resource_id:
+            resource_id = "22b2d52c-7a0e-426b-ac0a-a3326c388ba6"
 
-        print(f"  → Recurso UUID: {resource_id[:12]}...")
+        print(f"  -> Recurso UUID: {resource_id[:12]}...")
 
-        # PASO 2: Consultar el datastore con el UUID real (con paginación)
-        ds_url = "https://datos.hcdn.gob.ar/api/3/action/datastore_search"
-        offset = 0
-        page_size = 500
-        total_fetched = 0
+        # PASO 2: Filtrar por fecha directo en el servidor con SQL
+        # Evita paginar los 113.177 registros completos (mucho mas rapido)
+        sql = (
+            f'SELECT "PROYECTO_ID","TITULO","PUBLICACION_FECHA",'
+            f'"EXP_DIPUTADOS","EXP_SENADO","TIPO","AUTOR","CAMARA_ORIGEN" '
+            f'FROM "{resource_id}" '
+            f'WHERE "PUBLICACION_FECHA" >= \'{start_date}T00:00:00\' '
+            f'AND "PUBLICACION_FECHA" <= \'{end_date}T23:59:59\' '
+            f'LIMIT 500'
+        )
+        sql_url = "https://datos.hcdn.gob.ar/api/3/action/datastore_search_sql"
+        r = get_html(sql_url, params={"sql": sql})
 
-        while True:
-            params = {
-                "resource_id": resource_id,
-                "limit": page_size,
-                "offset": offset,
-            }
-            r = get_html(ds_url, params=params)
+        if r.status_code != 200 or not r.json().get("success"):
+            raise Exception(f"SQL HTTP {r.status_code}")
 
-            if r.status_code != 200:
-                print(f"  ⚠️  datastore_search HTTP {r.status_code}")
-                break
+        records = r.json().get("result", {}).get("records", [])
+        print(f"  -> Registros encontrados en el rango: {len(records)}")
 
-            data = r.json()
-            records = data.get("result", {}).get("records", [])
-            if not records:
-                break
+        for rec in records:
+            rec_lower = {k.lower(): v for k, v in rec.items()}
+            fecha_raw = rec_lower.get("publicacion_fecha", "")
+            fecha = fecha_raw[:10] if isinstance(fecha_raw, str) else str(fecha_raw)[:10]
+            if not fecha:
+                continue
 
-            for rec in records:
-                # Normalizar keys a minúsculas para facilitar la extracción
-                rec_lower = {k.lower(): v for k, v in rec.items()}
-                
-                # Extraer fecha
-                fecha_raw = (rec_lower.get("publicacion_fecha") or rec_lower.get("fecha_presentacion") or 
-                             rec_lower.get("fecha") or rec_lower.get("fecha_entrada") or "")
-                fecha = fecha_raw[:10] if isinstance(fecha_raw, str) else str(fecha_raw)[:10]
-                
-                if not fecha or not (start_date <= fecha <= end_date):
-                    continue
+            exp = (rec_lower.get("exp_diputados") or rec_lower.get("expediente") or "")
+            titulo = (rec_lower.get("titulo") or rec_lower.get("sumario") or "")
+            autor = (rec_lower.get("autor") or rec_lower.get("firmantes") or "")
 
-                exp = (rec_lower.get("exp_diputados") or rec_lower.get("expediente") or 
-                       rec_lower.get("numero_expediente") or rec_lower.get("nro_expediente") or "")
-                titulo = (rec_lower.get("titulo") or rec_lower.get("sumario") or
-                          rec_lower.get("descripcion") or "")
-                autor = (rec_lower.get("autor") or rec_lower.get("firmantes") or 
-                         rec_lower.get("firmante") or "")
-
-                items.append({
-                    "id_raw": exp,
-                    "titulo": titulo,
-                    "autor": autor,
-                    "bloque": (rec_lower.get("bloque") or rec_lower.get("partido") or ""),
-                    "fecha": fecha,
-                    "origen": "Cámara de Diputados",
-                    "link": (
-                        f"https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp={exp}"
-                        if exp else "https://datos.hcdn.gob.ar/"
-                    ),
-                    "texto": titulo[:3000],
-                    "es_aprobado": False,
-                    "exp_parlamentario": "",
-                })
-
-            total_fetched += len(records)
-            total_available = data.get("result", {}).get("total", 0)
-
-            # Si ya recorrimos todo o encontramos suficientes, salir
-            if offset + page_size >= total_available:
-                break
-            offset += page_size
-            time.sleep(1)  # Pausa cortés entre páginas
-
-        print(f"  → Total registros revisados del CKAN: {total_fetched}")
+            items.append({
+                "id_raw": exp,
+                "titulo": titulo,
+                "autor": autor,
+                "bloque": (rec_lower.get("bloque") or rec_lower.get("partido") or ""),
+                "fecha": fecha,
+                "origen": "Camara de Diputados",
+                "link": (
+                    f"https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp={exp}"
+                    if exp else "https://datos.hcdn.gob.ar/"
+                ),
+                "texto": titulo[:3000],
+                "es_aprobado": False,
+                "exp_parlamentario": "",
+            })
 
     except Exception as e:
-        print(f"  ⚠️  CKAN falló ({e}). Fallback scraping web...")
+        print(f"  WARNING: CKAN fallo ({e}). Fallback scraping web...")
         items.extend(_scrape_diputados_html(start_date, end_date))
 
-    print(f"  📋 Diputados: {len(items)} proyectos en el rango.")
+    print(f"  Diputados: {len(items)} proyectos en el rango.")
     return items
+
 
 
 def _scrape_diputados_html(start_date: str, end_date: str) -> list:
@@ -600,19 +583,44 @@ def _normalize_id(item: dict) -> str:
 
 
 def build_record(item: dict, analysis: dict) -> dict:
-    """Construye el registro completo combinando metadatos y análisis de la IA."""
+    """Construye el registro completo combinando metadatos y analisis de la IA.
+    Compatible con prompt_config.json v2.0 (20 campos de salida).
+    """
     rec_id = _normalize_id(item)
     estado = "Aprobado" if item.get("es_aprobado") else "En Debate"
 
-    # Defaults defensivos: si la IA devolvió campos vacíos o inválidos, usar valores por defecto
     def safe(key, default):
         v = analysis.get(key, default)
         return v if v is not None else default
 
+    # Defaults para analisis_micro con campos v2.0
+    micro_default = {
+        "impacto_costos_operativos": "", "barreras_de_entrada": "",
+        "impacto_pymes": "", "impacto_precios_al_consumidor": "",
+        "sectores_ganadores": [], "sectores_perdedores": [],
+    }
+    micro = safe("analisis_micro", micro_default)
+    if isinstance(micro, dict):
+        for k, v in micro_default.items():
+            micro.setdefault(k, v)
+
+    # Defaults para analisis_macro con campo v2.0
+    macro_default = {
+        "tipo_politica": "", "resumen": "",
+        "efectos_sobre_recaudacion": "", "efectos_sobre_empleo": "",
+        "efectos_sobre_comercio_exterior": "",
+    }
+    macro = safe("analisis_macro", macro_default)
+    if isinstance(macro, dict):
+        for k, v in macro_default.items():
+            macro.setdefault(k, v)
+
     return {
+        # Identificacion
         "id":                  rec_id,
         "origen":              item.get("origen", ""),
         "estado":              estado,
+        "tipo_norma":          safe("tipo_norma", "Proyecto de Ley"),
         "link_fuente":         item.get("link", ""),
         "link_boletin_oficial": item.get("link", "") if estado == "Aprobado" else "",
         "numero_ley":          item.get("numero_norma", "") if estado == "Aprobado" else "",
@@ -622,26 +630,36 @@ def build_record(item: dict, analysis: dict) -> dict:
         "bloque_politico":     item.get("bloque", ""),
         "fecha_inicio":        item.get("fecha", ""),
         "fecha_aprobacion":    item.get("fecha", "") if estado == "Aprobado" else "",
+        # Clasificacion
         "comisiones":          safe("comisiones", []),
         "industrias_afectadas": safe("industrias_afectadas", []),
-        "analisis_macro":      safe("analisis_macro", {
-            "tipo_politica": "", "resumen": "",
-            "efectos_sobre_recaudacion": "", "efectos_sobre_empleo": "",
-        }),
-        "analisis_micro":      safe("analisis_micro", {
-            "impacto_costos_operativos": "",
-            "barreras_de_entrada": "", "impacto_pymes": "",
+        "cadena_de_valor_afectada": safe("cadena_de_valor_afectada", []),
+        "tags":                safe("tags", []),
+        # Analisis economico v2.0
+        "analisis_macro":      macro,
+        "analisis_micro":      micro,
+        "analisis_laboral":    safe("analisis_laboral", {
+            "impacto_empleo_formal": "",
+            "convenios_colectivos_afectados": "",
+            "impacto_autonomos_monotributo": "",
         }),
         "clasificacion_doctrinal": safe("clasificacion_doctrinal", {
             "doctrina": "Neutro / Procedimental",
             "descripcion": "", "rumbo_economico_proyectado": "",
         }),
+        # Evaluacion ejecutiva
         "criticidad":          safe("criticidad", "Baja"),
+        "urgencia":            safe("urgencia", "Monitorear"),
         "impacto":             safe("impacto", "Neutral"),
+        "horizonte_temporal":  safe("horizonte_temporal", "Mediano plazo (6-24 meses)"),
         "resumen_puntos":      safe("resumen_puntos", []),
+        "riesgos_regulatorios": safe("riesgos_regulatorios", []),
+        "oportunidades":       safe("oportunidades", []),
         "minuta":              safe("minuta", ""),
+        # Observatorio
         "es_absurdo":          bool(safe("es_absurdo", False)),
         "critica_observatorio": safe("critica_observatorio", ""),
+        # Metadatos
         "vinculacion":         "no_aplica" if estado == "Aprobado" else "confirmada",
     }
 
