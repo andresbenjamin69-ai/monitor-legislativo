@@ -217,5 +217,510 @@
     "es_absurdo": false,
     "critica_observatorio": "",
     "vinculacion": "confirmada"
+  },
+  {
+    "id": "2811-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2811-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "DECLARAR DE INTERES DE LA H. CAMARA LA ACTIVIDAD REALIZADA POR LA ASOCIACION DE DESARROLLADORES DE VIDEOJUEGOS ARGENTINOS (ADVA).",
+    "titulo_sintesis": "Declara de interés la actividad de la Asociación de Desarrolladores de Videojuegos",
+    "autor": "OLMOS, KELLY",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [
+      "Software y Economía del Conocimiento"
+    ],
+    "cadena_de_valor_afectada": [
+      "Desarrollo de Software",
+      "Servicios Digitales"
+    ],
+    "tags": [
+      "videojuegos",
+      "adva",
+      "declaracion",
+      "software",
+      "economia-del-conocimiento"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "Se trata de un proyecto de declaración de carácter meramente simbólico y protocolar. No establece regulaciones, impuestos, ni partidas presupuestarias específicas para el sector. Su impacto macroeconómico directo es nulo.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal ni el gasto público.",
+      "efectos_sobre_empleo": "No genera efectos directos sobre el mercado laboral ni la creación de empleo.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo en las exportaciones o importaciones de servicios de software."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto en los costos operativos de las empresas del sector.",
+      "barreras_de_entrada": "Sin cambio. No se modifican los requisitos de acceso al mercado ni la competencia.",
+      "impacto_pymes": "Sin impacto diferencial para micro, pequeñas o medianas empresas del sector tecnológico.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de los videojuegos o servicios relacionados.",
+      "sectores_ganadores": [
+        "Asociación de Desarrolladores de Videojuegos Argentinos (ADVA)"
+      ],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto directo sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes o monotributistas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto consiste en una declaración de interés de la Cámara de Diputados, de carácter protocolar y sin efectos regulatorios o económicos vinculantes.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual; consolida la práctica legislativa de reconocimientos simbólicos a sectores productivos."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Declaración de interés de la Cámara de Diputados para la actividad de ADVA.",
+      "Reconocimiento de carácter simbólico y protocolar sin asignación de recursos públicos.",
+      "Ausencia de modificaciones impositivas, regulatorias o de fomento económico directo."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [
+      "Posible visibilización política del sector de desarrollo de videojuegos para futuros proyectos de fomento."
+    ],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 2811-D-2026 - Reconocimiento a ADVA\nFECHA: 2026-06-12\n\nSITUACIÓN:\nSe presentó un proyecto para declarar de interés de la Cámara de Diputados la actividad de la Asociación de Desarrolladores de Videojuegos Argentinos (ADVA).\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto es estrictamente neutral y simbólico. No se modifican alícuotas, regulaciones ni se crean obligaciones para el sector de software o economía del conocimiento.\n\nACCIÓN RECOMENDADA:\nArchivar y monitorear por si este reconocimiento precede a iniciativas legislativas de fomento sectorial con impacto fiscal o regulatorio.\n\nREFERENCIA:\nExpediente 2811-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2809-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2809-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PROTECCION DE HOMENAJES EN MUSEOS Y ESPACIOS CONMEMORATIVOS DE LA GUERRA DE MALVINAS. REGIMEN.",
+    "titulo_sintesis": "Establece régimen de protección de homenajes en museos y espacios de Malvinas",
+    "autor": "LEIVA, ALDO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "malvinas",
+      "museos",
+      "homenajes",
+      "cultura",
+      "patrimonio"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto propone un régimen de protección para homenajes y espacios conmemorativos de la Guerra de Malvinas. No presenta un impacto macroeconómico directo ni altera variables agregadas de la economía nacional.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado Nacional.",
+      "efectos_sobre_empleo": "No se prevén efectos sobre el mercado laboral general.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en las exportaciones o importaciones."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo en los costos de producción de las empresas industriales.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de competencia ni de acceso a mercados.",
+      "impacto_pymes": "Neutral. No genera obligaciones ni beneficios diferenciales para las micro, pequeñas o medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "No afecta convenios colectivos de trabajo.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes o monotributistas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto se centra exclusivamente en la preservación patrimonial, cultural e histórica de espacios conmemorativos, sin proponer reformas de carácter económico o regulaciones de mercado.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual; se limita a la esfera de la política cultural y de memoria histórica."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Largo plazo (+24 meses)",
+    "resumen_puntos": [
+      "Establece un marco de protección legal para homenajes y monumentos de la Guerra de Malvinas.",
+      "Regula la preservación de espacios conmemorativos y museos dedicados a la temática.",
+      "Carece de disposiciones de índole tributaria, cambiaria o de fomento industrial."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley 2809-D-2026 - Protección de homenajes de Malvinas\nFECHA: 2026-06-12\nSITUACIÓN: Se presentó un proyecto de ley para crear un régimen de protección de homenajes en museos y espacios conmemorativos de la Guerra de Malvinas.\nIMPACTO PARA NUESTRA EMPRESA: El impacto es estrictamente neutral. No se identifican regulaciones, cargas impositivas ni beneficios que afecten la actividad industrial o comercial de la compañía.\nACCIÓN RECOMENDADA: Archivar y mantener bajo monitoreo de rutina por su carácter puramente cultural y simbólico.\nREFERENCIA: Expediente 2809-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2806-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2806-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "REGIMEN NACIONAL DE PROMOCION DEL EMPLEO JOVEN. CREACION.",
+    "titulo_sintesis": "Crea el Régimen Nacional de Promoción del Empleo Joven",
+    "autor": "BORDET, GUSTAVO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [
+      "Comercio Minorista y PYMES"
+    ],
+    "cadena_de_valor_afectada": [
+      "Recursos Humanos",
+      "Operaciones"
+    ],
+    "tags": [
+      "empleo joven",
+      "promocion laboral",
+      "pymes",
+      "incentivos fiscales",
+      "primer empleo"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Laboral",
+      "resumen": "El proyecto propone la creación de un régimen nacional para incentivar la inserción laboral de jóvenes. Se orienta a reducir la informalidad laboral en el segmento de menor rango etario. Su impacto macroeconómico final dependerá del diseño de los incentivos fiscales asociados.",
+      "efectos_sobre_recaudacion": "Indeterminado en el extracto provisto. Típicamente, estos regímenes implican un costo fiscal inicial por exención de contribuciones patronales, compensado parcialmente por mayor consumo y formalización.",
+      "efectos_sobre_empleo": "Fomenta la creación de puestos de trabajo registrados para jóvenes de entre 18 y 24 años, reduciendo la tasa de desempleo juvenil.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo sobre el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Reducción potencial de costos laborales de contratación para empresas que incorporen personal joven bajo el régimen.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de entrada a los mercados sectoriales.",
+      "impacto_pymes": "Favorable, ya que las PyMEs comerciales e industriales suelen tener mayor sensibilidad de contratación ante incentivos de reducción de cargas patronales.",
+      "impacto_precios_al_consumidor": "Neutral. No se prevé un traslado directo a los precios de bienes y servicios finales.",
+      "sectores_ganadores": [
+        "Comercio Minorista y PYMES",
+        "Jóvenes desempleados"
+      ],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Positivo, promoviendo la registración de trabajadores jóvenes en su primer empleo formal.",
+      "convenios_colectivos_afectados": "No se especifican modificaciones a convenios colectivos de trabajo en el extracto.",
+      "impacto_autonomos_monotributo": "Neutral, el foco del régimen está puesto en el empleo en relación de dependencia."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Desarrollista / Industrialista",
+      "descripcion": "El proyecto busca promover activamente la inserción laboral de un sector específico mediante un régimen de fomento estatal, característico de políticas de desarrollo de capacidades locales.",
+      "rumbo_economico_proyectado": "Consolida una tendencia de intervención estatal para la corrección de asimetrías en el mercado de trabajo formal."
+    },
+    "criticidad": "Media",
+    "urgencia": "Monitorear",
+    "impacto": "Positivo",
+    "horizonte_temporal": "Mediano plazo (6-24 meses)",
+    "resumen_puntos": [
+      "Creación de un Régimen Nacional de Promoción del Empleo Joven para incentivar la inserción laboral formal.",
+      "Foco en la reducción de la informalidad laboral en el segmento de menor rango etario.",
+      "Establecimiento de un marco normativo de fomento para la contratación de primer empleo."
+    ],
+    "riesgos_regulatorios": [
+      "Potencial contingencia por exclusión de beneficios si no se cumplen requisitos de mantenimiento de nómina",
+      "Complejidad burocrática para la acreditación de los beneficios del régimen"
+    ],
+    "oportunidades": [
+      "Reducción de costos de contratación de personal joven",
+      "Acceso a incentivos fiscales o subsidios estatales para capacitación"
+    ],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley de Régimen Nacional de Promoción del Empleo Joven (Expte. 2806-D-2026)\nFECHA: 12 de junio de 2026\n\nSITUACIÓN:\nSe ha presentado en la Cámara de Diputados un proyecto de ley bajo el expediente 2806-D-2026, de autoría del diputado Gustavo Bordet, que propone la creación de un 'Régimen Nacional de Promoción del Empleo Joven'. El proyecto apunta a establecer incentivos para la contratación de jóvenes en el mercado laboral formal.\n\nIMPACTO PARA NUESTRA EMPRESA:\nDe aprobarse, la norma podría representar una oportunidad significativa para reducir los costos de contratación y capacitación de personal joven. Las empresas industriales y comerciales con alta rotación o planes de expansión de nómina se verán directamente beneficiadas por las probables reducciones en contribuciones patronales asociadas a este tipo de regímenes.\n\nACCIÓN RECOMENDADA:\nSe aconseja al departamento de Recursos Humanos y al equipo Legal realizar un monitoreo del giro a comisiones de este proyecto para analizar el articulado de incentivos fiscales específicos una vez publicado el dictamen. Preparar un relevamiento de las necesidades de contratación de perfiles junior para el próximo ejercicio.\n\nREFERENCIA:\nExpediente 2806-D-2026 - Cámara de Diputados.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2805-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2805-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PROMUEVASE EL BUEN TRATO HACIA LAS PERSONAS MAYORES EN TODOS LOS AMBITOS DE SUS RELACIONES INTERPERSONALES.",
+    "titulo_sintesis": "Promueve el buen trato hacia las personas mayores en relaciones interpersonales",
+    "autor": "BIELLA, BERNARDO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "personas mayores",
+      "buen trato",
+      "declarativo",
+      "derechos sociales"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto establece un marco declarativo para fomentar el buen trato a personas mayores. No presenta impacto macroeconómico directo ni prevé partidas de gasto específicas en su articulado.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado.",
+      "efectos_sobre_empleo": "Sin efectos previstos sobre el mercado laboral general.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en las exportaciones o importaciones."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo en la estructura de costos de las empresas industriales.",
+      "barreras_de_entrada": "Sin cambio. No se establecen nuevas barreras de entrada al mercado.",
+      "impacto_pymes": "Neutral. No genera obligaciones comerciales o impositivas diferenciales para las PyMEs.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto directo sobre las relaciones laborales formales reguladas por la Ley de Contrato de Trabajo.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto promueve pautas de conducta y concientización social hacia un sector vulnerable sin establecer regulaciones de mercado, subsidios o cargas impositivas.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual; consolida políticas de concientización social y derechos humanos sin impacto fiscal."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Largo plazo (+24 meses)",
+    "resumen_puntos": [
+      "Promoción del buen trato hacia las personas mayores en todos los ámbitos de sus relaciones interpersonales.",
+      "Establecimiento de un marco declarativo de concientización social sin sanciones comerciales explícitas.",
+      "Ausencia de asignación presupuestaria específica o creación de nuevos tributos en el articulado analizado."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley 2805-D-2026 - Promoción del buen trato a personas mayores\nFECHA: 12 de junio de 2026\nSITUACIÓN: Se ingresó el proyecto de ley que busca promover el buen trato hacia las personas mayores en sus relaciones interpersonales.\nIMPACTO PARA NUESTRA EMPRESA: El impacto es neutral. Al tratarse de una norma de carácter declarativo y de concientización, no genera nuevas obligaciones operativas, costos adicionales ni regulaciones comerciales para el sector industrial.\nACCIÓN RECOMENDADA: Archivar y monitorear su evolución legislativa por si se incorporan modificaciones que afecten la atención al cliente o regulaciones laborales específicas.\nREFERENCIA: Expediente 2805-D-2026, Cámara de Diputados.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2804-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2804-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "DDECLARAR MONUMENTO HISTORICO NACIONAL AL EDIFICIO DEL MUSEO HISTORICO PROVINCIAL \"TENIENTE DE GOBERNADOR MANUEL CABRERA DE MELO Y ALPOIN\" DE LA PROVINCIA DE CORRIENTES.",
+    "titulo_sintesis": "Declara Monumento Histórico Nacional al Museo Histórico Provincial de Corrientes",
+    "autor": "GONZALEZ, DIOGENES IGNACIO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "patrimonio",
+      "corrientes",
+      "museo",
+      "cultura",
+      "monumento"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto propone declarar monumento histórico nacional a un edificio provincial en Corrientes. No presenta un impacto macroeconómico directo ni altera variables agregadas de la economía nacional. Su finalidad es estrictamente de preservación patrimonial y cultural.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal nacional.",
+      "efectos_sobre_empleo": "Sin efectos previstos sobre el mercado laboral general.",
+      "efectos_sobre_comercio_exterior": "Sin impacto sobre las exportaciones o importaciones."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto sobre los costos operativos del sector industrial privado.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de competencia de ningún mercado.",
+      "impacto_pymes": "Sin impacto diferencial sobre pequeñas y medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios.",
+      "sectores_ganadores": [
+        "Turismo y Hotelería"
+      ],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto se limita a una declaración de patrimonio histórico bajo el régimen de la Ley 12.665, constituyendo un acto administrativo y cultural sin incidencia en la estructura económica o de mercado.",
+      "rumbo_economico_proyectado": "Consolida la preservación del patrimonio histórico público sin alterar el rumbo de la política económica general."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Largo plazo (+24 meses)",
+    "resumen_puntos": [
+      "Declaración de Monumento Histórico Nacional al edificio del Museo Histórico Provincial 'Teniente de Gobernador Manuel Cabrera de Melo y Alpoin' de la Provincia de Corrientes.",
+      "Sometimiento del inmueble al régimen de tutela y conservación previsto por la Ley 12.665 de la Comisión Nacional de Monumentos.",
+      "Restricción a la realización de modificaciones estructurales, transferencias o demoliciones sobre el inmueble sin autorización previa nacional."
+    ],
+    "riesgos_regulatorios": [
+      "Restricciones de uso y conservación sobre el inmueble en caso de que existieran proyectos de infraestructura linderos o asociados."
+    ],
+    "oportunidades": [
+      "Fomento indirecto del turismo cultural y la valorización inmobiliaria de la zona histórica de la Provincia de Corrientes."
+    ],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley 2804-D-2026 - Declaración de Monumento Histórico Nacional\nFECHA: 2026-06-12\n\nSITUACIÓN:\nSe ha presentado en la Cámara de Diputados un proyecto de ley bajo el expediente 2804-D-2026 que busca declarar Monumento Histórico Nacional al edificio del Museo Histórico Provincial 'Teniente de Gobernador Manuel Cabrera de Melo y Alpoin' en la Provincia de Corrientes.\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto para la actividad industrial y corporativa de nuestra firma es neutral. No se identifican afectaciones directas a la cadena de valor, costos operativos, regulaciones comerciales o laborales que impacten a las empresas del sector.\n\nACCIÓN RECOMENDADA:\nSe sugiere archivar el presente informe y mantener un monitoreo pasivo de su trámite legislativo, dado que su naturaleza es estrictamente patrimonial y cultural.\n\nREFERENCIA:\nExpediente 2804-D-2026 (Cámara de Diputados). Fuente oficial: https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2804-D-2026",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2803-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2803-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "DECLARAR LA EMERGENCIA EN MATERIA FINANCIERA PARA LAS PEQUENAS Y MEDIANAS EMPRESAS (PYMES).",
+    "titulo_sintesis": "Declara la emergencia financiera para las pequeñas y medianas empresas (PyMEs)",
+    "autor": "BORDET, GUSTAVO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [
+      "Comercio Minorista y PYMES"
+    ],
+    "cadena_de_valor_afectada": [
+      "Financiamiento",
+      "Operaciones comerciales"
+    ],
+    "tags": [
+      "pymes",
+      "emergencia financiera",
+      "financiamiento",
+      "alivio fiscal"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto propone declarar la emergencia financiera para las PyMEs. Al no contar con el articulado detallado, se infiere que busca establecer un marco de protección financiera temporal para el sector.",
+      "efectos_sobre_recaudacion": "Indeterminado debido a la falta de articulado específico en el extracto provisto.",
+      "efectos_sobre_empleo": "Potencial sostenimiento del empleo formal en el sector PyME ante medidas de alivio financiero.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo identificable en el extracto provisto."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Potencial reducción temporal de costos financieros si se implementan prórrogas o tasas subsidiadas.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de ingreso a los mercados.",
+      "impacto_pymes": "Favorable, al estar dirigido específicamente a aliviar la situación financiera de este segmento empresarial.",
+      "impacto_precios_al_consumidor": "Neutral en el corto plazo, supeditado a la instrumentación de las medidas de emergencia.",
+      "sectores_ganadores": [
+        "Comercio Minorista y PYMES"
+      ],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Mitigación de despidos en el sector PyME mediante el alivio de la presión financiera.",
+      "convenios_colectivos_afectados": "",
+      "impacto_autonomos_monotributo": "Sin impacto directo especificado en el texto."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Keynesiano / Intervencionista",
+      "descripcion": "La declaración de emergencia financiera implica la intervención del Estado en las relaciones financieras y crediticias para proteger a un sector específico (PyMEs), característico de políticas de mitigación de crisis.",
+      "rumbo_economico_proyectado": "Mayor regulación estatal sobre el sistema financiero y de crédito en resguardo de los sectores productivos de menor escala."
+    },
+    "criticidad": "Media",
+    "urgencia": "Monitorear",
+    "impacto": "Positivo",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Declaración de la emergencia financiera para las Pequeñas y Medianas Empresas (PyMEs).",
+      "Establecimiento de un marco de protección legal ante la coyuntura financiera adversa.",
+      "Habilitación potencial al Poder Ejecutivo para dictar medidas de alivio fiscal o financiero."
+    ],
+    "riesgos_regulatorios": [
+      "Incertidumbre sobre la aplicación de contratos financieros vigentes"
+    ],
+    "oportunidades": [
+      "Acceso a refinanciaciones de deudas bajo condiciones de emergencia",
+      "Posibles prórrogas impositivas y previsionales"
+    ],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley de Emergencia Financiera para PyMEs (Expte. 2803-D-2026)\nFECHA: 12 de junio de 2026\n\nSITUACIÓN:\nSe presentó en la Cámara de Diputados un proyecto de ley bajo el expediente 2803-D-2026, de autoría del diputado Gustavo Bordet, que propone declarar la emergencia en materia financiera para las Pequeñas y Medianas Empresas (PyMEs).\n\nIMPACTO PARA NUESTRA EMPRESA:\nDe aprobarse, este marco de emergencia podría habilitar medidas de alivio financiero, refinanciación de pasivos y prórrogas impositivas para las PyMEs de nuestra cadena de valor. Esto podría estabilizar la cadena de pagos y reducir el riesgo de incobrabilidad con clientes de menor escala.\n\nACCIÓN RECOMENDADA:\nMonitorear el giro a comisiones de este proyecto y la publicación de su texto completo para evaluar el alcance de los beneficios financieros y fiscales que se propongan, coordinando con el departamento de Finanzas y Legales para anticipar reestructuraciones de deuda de clientes PyME.\n\nREFERENCIA:\nExpediente 2803-D-2026, Cámara de Diputados de la Nación. Fuente oficial: HCDN.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2802-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2802-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "EXPRESAR RECHAZO A LA RESOLUCION N&deg; 827/2026 DEL MINISTERIO DE ECONOMIA DE LA NACION, MEDIANTE LA CUAL SE DESAFECTAN DEL USO FERROVIARIO INMUEBLES UBICADOS EN LA CIUDAD DE CANADA DE GOMEZ, PROVINCIA DE SANTA FE.",
+    "titulo_sintesis": "Rechaza la desafectación de inmuebles ferroviarios en Cañada de Gómez",
+    "autor": "GIULIANO, DIEGO A.",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Transportes"
+    ],
+    "industrias_afectadas": [
+      "Logística y Transporte"
+    ],
+    "cadena_de_valor_afectada": [
+      "Logística / Transporte",
+      "Infraestructura Ferroviaria"
+    ],
+    "tags": [
+      "ferroviario",
+      "infraestructura",
+      "transporte",
+      "santa fe",
+      "declaracion"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Infraestructura",
+      "resumen": "El proyecto expresa un rechazo político a la desafectación de terrenos ferroviarios nacionales en la provincia de Santa Fe. Al tratarse de un proyecto de declaración, no genera modificaciones normativas directas ni impacto macroeconómico inmediato. Busca sentar una postura legislativa contraria a la enajenación de activos de infraestructura de transporte.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal, aunque busca oponerse a la venta de activos estatales que generarían ingresos de capital de forma transitoria.",
+      "efectos_sobre_empleo": "Sin efectos directos proyectables sobre el mercado laboral general.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo sobre las operaciones de comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo sobre los costos operativos actuales de las empresas industriales.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de competencia ni de acceso a mercados.",
+      "impacto_pymes": "Neutral. No establece regulaciones ni beneficios específicos para pequeñas y medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto estimado sobre los precios finales de bienes de consumo.",
+      "sectores_ganadores": [
+        "Logística y Transporte"
+      ],
+      "sectores_perdedores": [
+        "Desarrolladores Inmobiliarios"
+      ]
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto directo sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto es una declaración de rechazo político sin fuerza de ley ni capacidad de modificar de forma directa el marco regulatorio o impositivo vigente.",
+      "rumbo_economico_proyectado": "Consolida una postura de resistencia legislativa frente a la desregulación y disposición de activos de infraestructura pública por parte del Poder Ejecutivo."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Expresa el rechazo formal de la Cámara de Diputados a la Resolución N° 827/2026 del Ministerio de Economía de la Nación.",
+      "Cuestiona la desafectación del uso ferroviario de inmuebles ubicados en la ciudad de Cañada de Gómez, Provincia de Santa Fe.",
+      "Busca preservar el patrimonio de infraestructura ferroviaria nacional frente a decisiones de disposición de bienes del Estado."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 2802-D-2026 - Rechazo a desafectación de inmuebles ferroviarios\nFECHA: 12 de junio de 2026\n\nSITUACIÓN:\nSe ha presentado en la Cámara de Diputados un proyecto de declaración que expresa el rechazo a la Resolución N° 827/2026 del Ministerio de Economía de la Nación, mediante la cual se desafectan del uso ferroviario diversos inmuebles en Cañada de Gómez, Provincia de Santa Fe.\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto directo es neutral. Al tratarse de un proyecto de declaración, carece de fuerza de ley y no modifica de forma inmediata el estatus jurídico de los terrenos ni las tarifas de transporte. No obstante, expone la tensión política existente en torno a la disposición de activos de infraestructura logística clave en la región pampeana.\n\nACCIÓN RECOMENDADA:\nRecomendamos al equipo de logística y asuntos corporativos monitorear el estado parlamentario de esta declaración y, en paralelo, seguir las decisiones de la Agencia de Administración de Bienes del Estado (AABE) respecto al destino final de dichos inmuebles, especialmente si la empresa utiliza la red ferroviaria de la zona para el traslado de insumos o productos.\n\nREFERENCIA:\nExpediente 2802-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
   }
 ]
