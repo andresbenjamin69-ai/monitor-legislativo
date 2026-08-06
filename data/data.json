@@ -722,5 +722,137 @@
     "es_absurdo": false,
     "critica_observatorio": "",
     "vinculacion": "confirmada"
+  },
+  {
+    "id": "2784-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Otro",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2784-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "CITAR AL JEFE DE GABINETE DE MINISTROS DE LA NACION, LICENCIADO MANUEL ADORNI, A LOS EFECTOS DEL TRATAMIENTO DE UNA MOCION DE CENSURA.",
+    "titulo_sintesis": "Convoca al Jefe de Gabinete para tratar moción de censura",
+    "autor": "JULIANO, PABLO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-11",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "moción de censura",
+      "Jefe de Gabinete",
+      "control parlamentario",
+      "Manuel Adorni",
+      "Diputados"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto solicita la comparecencia del Jefe de Gabinete para debatir una moción de censura, un mecanismo constitucional de control político. No presenta impacto macroeconómico directo ni altera variables fiscales o monetarias en el corto plazo. Su relevancia es estrictamente de índole político-institucional.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal o el gasto público presupuestado.",
+      "efectos_sobre_empleo": "Sin efectos previstos sobre el mercado laboral o la creación de empleo.",
+      "efectos_sobre_comercio_exterior": "Sin impacto sobre las operaciones de importación o exportación."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto en la estructura de costos operativos de las empresas.",
+      "barreras_de_entrada": "Sin cambio. No se modifican las condiciones de competencia ni de acceso a mercados.",
+      "impacto_pymes": "Sin impacto diferencial para las pequeñas y medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios al consumidor.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado ni las modalidades de contratación.",
+      "convenios_colectivos_afectados": "No afecta convenios colectivos de trabajo ni negociaciones paritarias.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes o del régimen simplificado."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de una iniciativa de control parlamentario sobre el Poder Ejecutivo (moción de censura, art. 101 de la Constitución Nacional), de carácter netamente procedimental e institucional, sin contenido de política económica.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico; consolida la tensión política e institucional entre el Poder Legislativo y el Ejecutivo."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Solicitud de citación al Jefe de Gabinete de Ministros, Manuel Adorni, a la Cámara de Diputados.",
+      "Tratamiento de una moción de censura de acuerdo a las facultades de control constitucional del Congreso.",
+      "Iniciativa de control político de carácter estrictamente institucional sin reformas impositivas o regulatorias de mercado."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Citación al Jefe de Gabinete para moción de censura (Exp. 2784-D-2026)\nFECHA: 11 de junio de 2026\nSITUACIÓN: Se presentó un proyecto en la Cámara de Diputados para citar al Jefe de Gabinete, Manuel Adorni, con el fin de tratar una moción de censura.\nIMPACTO PARA NUESTRA EMPRESA: Nulo. El proyecto es de naturaleza estrictamente política e institucional, sin impacto en la regulación económica, costos operativos o cadena de valor industrial.\nACCIÓN RECOMENDADA: Archivar y monitorear la estabilidad institucional sin requerir acciones por parte del equipo legal o corporativo.\nREFERENCIA: Expediente 2784-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "2800-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Otro",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=2800-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PEDIDO DE INFORMES AL PODER EJECUTIVO SOBRE LAS PERSONAS EXPUESTAS POLITICAMENTE QUE HAYAN SOLICITADO INCORPORARSE AL REGIMEN SIMPLIFICADO DE GANANCIAS ESTABLECIDO POR LA LEY 27799.",
+    "titulo_sintesis": "Solicita informes sobre PEPs adheridos al régimen simplificado de ganancias de Ley 27799",
+    "autor": "TROTTA, NICOLAS ALFREDO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-12",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Peticiones, Poderes y Reglamento"
+    ],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "transparencia",
+      "impuesto a las ganancias",
+      "PEPs",
+      "pedido de informes",
+      "ley 27799"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "Se trata de un pedido de informes de carácter legislativo sin impacto macroeconómico directo. Busca transparentar la adhesión de Personas Expuestas Políticamente (PEPs) al régimen simplificado de ganancias. No altera variables agregadas de la economía.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre la recaudación fiscal, dado que es una solicitud de información sobre un régimen ya vigente.",
+      "efectos_sobre_empleo": "Sin efectos sobre el mercado laboral.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto en los costos operativos de las empresas privadas.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de acceso al mercado.",
+      "impacto_pymes": "Sin impacto diferencial para las PyMEs.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto es un pedido de informes amparado en las facultades de control del Poder Legislativo, sin proponer modificaciones de fondo a la normativa fiscal vigente.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico; consolida la transparencia y el control legislativo sobre la aplicación de regímenes impositivos especiales."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Solicitud de información detallada al Poder Ejecutivo sobre la aplicación de la Ley 27799.",
+      "Identificación de Personas Expuestas Políticamente (PEPs) que hayan solicitado el ingreso al Régimen Simplificado de Ganancias.",
+      "Ejercicio de control parlamentario sobre la transparencia fiscal y posibles conflictos de interés."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Pedido de informes sobre PEPs en Régimen Simplificado de Ganancias (Exp. 2800-D-2026)\nFECHA: 2026-06-12\nSITUACIÓN: Se presentó un proyecto de pedido de informes para que el Poder Ejecutivo detalle qué Personas Expuestas Políticamente (PEPs) se adhirieron al régimen simplificado de ganancias de la Ley 27799.\nIMPACTO PARA NUESTRA EMPRESA: Nulo. Es una medida de control legislativo orientada a la transparencia pública que no afecta la operación ni la carga tributaria corporativa.\nACCIÓN RECOMENDADA: Archivar y monitorear por cuestiones de compliance general, sin requerir acciones legales ni operativas.\nREFERENCIA: Expediente 2800-D-2026, Cámara de Diputados.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
   }
 ]
