@@ -1440,5 +1440,257 @@
     "es_absurdo": false,
     "critica_observatorio": "",
     "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-08-07-002",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PE-13/26-PL , O.D. 104/2026",
+    "titulo_sintesis": "Tramita expediente PE-13/26-PL del Senado de la Nación",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-08-07",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "senado",
+      "proyecto-de-ley",
+      "orden-del-dia"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "No se dispone de texto articulado suficiente en el documento provisto para proyectar un impacto macroeconómico.",
+      "efectos_sobre_recaudacion": "",
+      "efectos_sobre_empleo": "",
+      "efectos_sobre_comercio_exterior": ""
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "",
+      "barreras_de_entrada": "",
+      "impacto_pymes": "",
+      "impacto_precios_al_consumidor": "",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "",
+      "convenios_colectivos_afectados": "",
+      "impacto_autonomos_monotributo": ""
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El documento provisto solo contiene la identificación del expediente PE-13/26-PL y la Orden del Día 104/2026, sin articulado sustantivo.",
+      "rumbo_economico_proyectado": "No se puede determinar una tendencia económica debido a la ausencia de articulado técnico."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Ingreso del expediente PE-13/26-PL a la Cámara de Senadores.",
+      "Asociación con el Orden del Día número 104 del año 2026.",
+      "Ausencia de texto articulado técnico en la documentación provista para análisis detallado."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Monitoreo de Expediente PE-13/26-PL (O.D. 104/2026)\nFECHA: 2026-08-07\nSITUACIÓN: Se ha registrado el ingreso del expediente PE-13/26-PL en el Senado de la Nación, asociado al Orden del Día 104/2026. Al momento, no se dispone del texto articulado para su análisis técnico.\nIMPACTO PARA NUESTRA EMPRESA: Sin impacto identificable debido a la falta de contenido normativo en el extracto provisto.\nACCIÓN RECOMENDADA: Monitorear la publicación del texto completo del proyecto en el boletín de asuntos entrantes para evaluar posibles impactos sectoriales.\nREFERENCIA: Expediente SENADO-2026-08-07-002 / PE-13/26-PL.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-08-07-003",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PE-13/26-PL , O.D. 104/2026",
+    "titulo_sintesis": "Establece monitoreo del expediente legislativo PE-13/26-PL O.D. 104/2026",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-08-07",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "senado",
+      "proyecto-de-ley",
+      "monitoreo"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El extracto provisto no contiene articulado técnico para realizar un análisis macroeconómico. Se registra únicamente la identificación del expediente en el Senado.",
+      "efectos_sobre_recaudacion": "",
+      "efectos_sobre_empleo": "",
+      "efectos_sobre_comercio_exterior": ""
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "",
+      "barreras_de_entrada": "Sin cambio. No se dispone de articulado técnico en el extracto provisto.",
+      "impacto_pymes": "",
+      "impacto_precios_al_consumidor": "",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "",
+      "convenios_colectivos_afectados": "",
+      "impacto_autonomos_monotributo": ""
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El extracto provisto solo contiene la identificación del expediente PE-13/26-PL (O.D. 104/2026) sin texto normativo asociado.",
+      "rumbo_economico_proyectado": "No se puede determinar una tendencia económica debido a la ausencia de articulado en el texto provisto."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Identificación del expediente PE-13/26-PL en la Cámara de Senadores.",
+      "Asociación al Orden del Día (O.D.) 104/2026.",
+      "Ausencia de articulado técnico o normativo en el extracto disponible para análisis."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Dirección de Asuntos Legales y Corporativos\nDE: EcoLey Alert\nASUNTO: Monitoreo de Expediente PE-13/26-PL (O.D. 104/2026)\nFECHA: 2026-08-07\n\nSITUACIÓN:\nSe ha registrado el ingreso en la Cámara de Senadores del expediente PE-13/26-PL, bajo el Orden del Día 104/2026. El extracto provisto no contiene el articulado técnico ni el texto del proyecto para su evaluación de impacto.\n\nIMPACTO PARA NUESTRA EMPRESA:\nNeutral. Al no disponer de las disposiciones específicas del proyecto, no es posible determinar afectaciones directas sobre la estructura de costos, cadena de valor o regulaciones del sector industrial.\n\nACCIÓN RECOMENDADA:\nSe encomienda al equipo legal realizar el seguimiento de la publicación del texto completo del Orden del Día 104/2026 en el boletín de asuntos entrantes del Senado para evaluar posibles impactos regulatorios una vez que el articulado esté disponible.\n\nREFERENCIA:\nExpediente SENADO-2026-08-07-003. Fuente oficial: https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-08-07-004",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "PE-13/26-PL , O.D. 104/2026",
+    "titulo_sintesis": "Establece el monitoreo del expediente PE-13/26-PL según Orden del Día 104/2026",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-08-07",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "senado",
+      "orden del dia",
+      "proyecto de ley"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "No se dispone del texto articulado del proyecto PE-13/26-PL en el extracto provisto para realizar un análisis macroeconómico.",
+      "efectos_sobre_recaudacion": "",
+      "efectos_sobre_empleo": "",
+      "efectos_sobre_comercio_exterior": ""
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "",
+      "barreras_de_entrada": "Sin cambio. No se dispone de información en el texto provisto.",
+      "impacto_pymes": "",
+      "impacto_precios_al_consumidor": "",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "",
+      "convenios_colectivos_afectados": "",
+      "impacto_autonomos_monotributo": ""
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El documento provisto únicamente contiene la referencia al expediente PE-13/26-PL y la Orden del Día 104/2026, sin articulado técnico disponible para su encuadre doctrinario.",
+      "rumbo_economico_proyectado": "No se puede determinar una tendencia económica debido a la ausencia de texto normativo."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Se identifica el expediente PE-13/26-PL de origen del Poder Ejecutivo.",
+      "Se registra la Orden del Día número 104 del año 2026 en la Cámara de Senadores.",
+      "No se incluye el texto del articulado en el extracto provisto para análisis detallado."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directivos de Empresas Industriales\nDE: EcoLey Alert\nASUNTO: Monitoreo de Expediente PE-13/26-PL (O.D. 104/2026)\nFECHA: 2026-08-07\nSITUACIÓN: Se ha registrado el ingreso del expediente PE-13/26-PL con Orden del Día 104/2026 en el Senado de la Nación. El extracto provisto no contiene el articulado técnico de la norma.\nIMPACTO PARA NUESTRA EMPRESA: Neutral. No es posible determinar impactos operativos o financieros ante la falta de texto normativo.\nACCIÓN RECOMENDADA: Monitorear la publicación del texto completo de la Orden del Día 104/2026 para evaluar posibles regulaciones sobre el sector industrial.\nREFERENCIA: Expediente SENADO-2026-08-07-004.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "SENADO-2026-08-07-005",
+    "origen": "Cámara de Senadores",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "S-13/26-PL , O.D. 104/2026",
+    "titulo_sintesis": "Establece registro de la Orden del Día 104/2026 del Senado de la Nación",
+    "autor": "Senado de la Nación",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-08-07",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "senado",
+      "orden-del-dia",
+      "legislativo"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "No es posible determinar el impacto macroeconómico debido a la ausencia de texto articulado en el extracto provisto.",
+      "efectos_sobre_recaudacion": "",
+      "efectos_sobre_empleo": "",
+      "efectos_sobre_comercio_exterior": ""
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "",
+      "barreras_de_entrada": "",
+      "impacto_pymes": "",
+      "impacto_precios_al_consumidor": "",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "",
+      "convenios_colectivos_afectados": "",
+      "impacto_autonomos_monotributo": ""
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El documento provisto únicamente contiene la identificación del expediente S-13/26-PL y su Orden del Día 104/2026, sin incorporar articulado de fondo.",
+      "rumbo_economico_proyectado": ""
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Se identifica el expediente legislativo SENADO-2026-08-07-005 correspondiente al proyecto S-13/26-PL.",
+      "El proyecto cuenta con la Orden del Día número 104/2026 de la Cámara de Senadores.",
+      "No se dispone del articulado técnico en el extracto provisto para evaluar impactos económicos o regulatorios."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista de EcoLey Alert\nASUNTO: Identificación de Orden del Día 104/2026 (S-13/26-PL)\nFECHA: 2026-08-07\n\nSITUACIÓN:\nSe ha registrado en la Cámara de Senadores el expediente SENADO-2026-08-07-005 (S-13/26-PL), bajo la Orden del Día 104/2026. El extracto disponible en la base de datos oficial no contiene el texto del articulado técnico para su análisis de fondo.\n\nIMPACTO PARA NUESTRA EMPRESA:\nSin impacto identificable en la estructura de costos, cadena de valor o regulaciones sectoriales debido a la falta de contenido normativo en el documento provisto.\n\nACCIÓN RECOMENDADA:\nSe sugiere al equipo de asuntos públicos y legales monitorear la publicación del texto completo de la Orden del Día 104/2026 en el sitio oficial del Senado para verificar si contiene regulaciones que afecten la actividad industrial.\n\nREFERENCIA:\nExpediente SENADO-2026-08-07-005, S-13/26-PL. Fuente oficial: https://www.senado.gob.ar/parlamentario/parlamentaria/",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
   }
 ]
