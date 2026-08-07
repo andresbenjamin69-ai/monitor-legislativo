@@ -854,5 +854,591 @@
     "es_absurdo": false,
     "critica_observatorio": "",
     "vinculacion": "confirmada"
+  },
+  {
+    "id": "3184-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3184-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "CODIGO DE MINERIA DE LA NACION. MODIFICACION DEL ARTICULO 3&deg; SOBRE REGULACION DE LAS TIERRAS RARAS Y SUS ELEMENTOS ASOCIADOS.",
+    "titulo_sintesis": "Modifica el Código de Minería para regular la explotación de tierras raras",
+    "autor": "SNOPEK, GUILLERMO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [
+      "Minería"
+    ],
+    "cadena_de_valor_afectada": [
+      "Exploración minera",
+      "Extracción",
+      "Procesamiento de minerales",
+      "Exportación"
+    ],
+    "tags": [
+      "mineria",
+      "tierras raras",
+      "codigo de mineria",
+      "recursos estrategicos",
+      "regulacion"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "Establece un marco regulatorio específico para la explotación de tierras raras en el territorio nacional, modificando el artículo 3 del Código de Minería. Busca definir la propiedad, concesión o control estatal sobre estos recursos estratégicos. El impacto final dependerá del grado de intervención estatal que fije la reglamentación.",
+      "efectos_sobre_recaudacion": "Potencial variación en la recaudación por regalías mineras o tasas especiales sobre tierras raras, sujeto a la reglamentación de la explotación.",
+      "efectos_sobre_empleo": "Sin impacto directo inmediato; a mediano plazo podría condicionar la creación de empleo calificado en proyectos de exploración tecnológica.",
+      "efectos_sobre_comercio_exterior": "Podría restringir o regular la exportación directa de tierras raras sin procesar, afectando el flujo de divisas del sector minero."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Incremento potencial de costos de cumplimiento regulatorio y obtención de licencias específicas para la explotación de tierras raras.",
+      "barreras_de_entrada": "Aumenta. Introduce requisitos regulatorios adicionales y posibles reservas estatales sobre elementos declarados estratégicos.",
+      "impacto_pymes": "Limitado en el corto plazo, dado que la minería de tierras raras requiere alta intensidad de capital, afectando principalmente a grandes consorcios de exploración.",
+      "impacto_precios_al_consumidor": "Sin impacto directo a corto plazo en el mercado local.",
+      "sectores_ganadores": [
+        "Estado Nacional",
+        "Provincias mineras (por control de recursos)"
+      ],
+      "sectores_perdedores": [
+        "Empresas de exploración minera",
+        "Exportadores de minerales no procesados"
+      ]
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Neutral en el corto plazo, supeditado al desarrollo de nuevos proyectos de inversión bajo el nuevo marco.",
+      "convenios_colectivos_afectados": "Asociación Obrera Minera Argentina (AOMA) podría verse afectada en futuras negociaciones para yacimientos específicos.",
+      "impacto_autonomos_monotributo": "Sin impacto directo."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Keynesiano / Intervencionista",
+      "descripcion": "La modificación del Artículo 3° del Código de Minería para regular específicamente las tierras raras y elementos asociados implica una mayor intervención del Estado sobre recursos considerados estratégicos, limitando la libre concesión absoluta.",
+      "rumbo_economico_proyectado": "Consolidación del control estatal sobre recursos minerales críticos para la transición energética y tecnológica."
+    },
+    "criticidad": "Media",
+    "urgencia": "Monitorear",
+    "impacto": "Negativo",
+    "horizonte_temporal": "Largo plazo (+24 meses)",
+    "resumen_puntos": [
+      "Modificación del Artículo 3° del Código de Minería de la Nación.",
+      "Inclusión de las tierras raras y sus elementos asociados bajo un esquema de regulación específica.",
+      "Establecimiento de condiciones diferenciadas para la concesión y explotación de estos minerales estratégicos."
+    ],
+    "riesgos_regulatorios": [
+      "Pérdida de concesiones vigentes si no se adaptan a la nueva categorización de tierras raras.",
+      "Mayores requisitos de aprobación ambiental y de explotación por parte de las autoridades mineras.",
+      "Posibles restricciones a la exportación de mineral en bruto."
+    ],
+    "oportunidades": [
+      "Desarrollo de proyectos de valor agregado local para el procesamiento de tierras raras.",
+      "Posibilidad de acceder a regímenes de fomento si se asocian con industrialización local."
+    ],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley 3184-D-2026 - Regulación de Tierras Raras\nFECHA: 30 de junio de 2026\nSITUACIÓN: Se presentó un proyecto para modificar el Art. 3° del Código de Minería, regulando específicamente las tierras raras y elementos asociados.\nIMPACTO PARA NUESTRA EMPRESA: Potencial aumento de la carga regulatoria y restricciones en la concesión de yacimientos que contengan estos elementos estratégicos.\nACCIÓN RECOMENDADA: Monitorear el giro a comisiones y establecer contacto con las cámaras del sector (CAEM) para evaluar el alcance de la reforma sobre concesiones vigentes.\nREFERENCIA: Expediente 3184-D-2026, Cámara de Diputados.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3183-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3183-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "EXPRESAR REPUDIO POR EL INTENTO DE DESPIDO DEL TRABAJADOR DE NUCLEOELECTRICA ARGENTINA S.A. - CENTRAL NUCLEAR ATUCHA -, MARIANO SALEH, POR SU CONDICION DE DELEGADO GREMIAL.",
+    "titulo_sintesis": "Repudia el intento de despido de un delegado gremial en Nucleoeléctrica Argentina S.A.",
+    "autor": "DEL CAÑO, NICOLAS",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Legislación del Trabajo",
+      "Peticiones, Poderes y Reglamento"
+    ],
+    "industrias_afectadas": [
+      "Energía y Combustibles"
+    ],
+    "cadena_de_valor_afectada": [
+      "Generación de Energía",
+      "Operación y Mantenimiento"
+    ],
+    "tags": [
+      "nucleoelectrica",
+      "atucha",
+      "sindicatos",
+      "declaracion",
+      "energia"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Laboral",
+      "resumen": "El proyecto es una declaración de repudio de carácter político sin efectos macroeconómicos directos. Expresa una postura sobre la estabilidad laboral de delegados gremiales en empresas estatales de energía. No altera variables agregadas de la economía.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado nacional.",
+      "efectos_sobre_empleo": "No genera cambios agregados en el mercado de empleo, limitándose a un pronunciamiento político sobre un caso particular.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo en los costos operativos de la empresa, salvo por la potencial conflictividad gremial asociada al caso.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de ingreso al mercado de generación eléctrica.",
+      "impacto_pymes": "Sin impacto diferencial sobre micro, pequeñas o medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre las tarifas de energía o precios finales al consumidor.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "No modifica el marco regulatorio del empleo formal, sino que ratifica la tutela sindical vigente por vía de declaración política.",
+      "convenios_colectivos_afectados": "No modifica convenios colectivos de trabajo de manera directa.",
+      "impacto_autonomos_monotributo": "Sin impacto."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un proyecto de declaración que expresa repudio político, careciendo de fuerza de ley o articulado normativo vinculante (Art. 1).",
+      "rumbo_economico_proyectado": "No consolida un rumbo económico particular por tratarse de un acto declarativo de carácter político-gremial."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Expresa el repudio de la Cámara de Diputados ante el intento de despido del delegado gremial Mariano Saleh.",
+      "Señala que el trabajador desempeña funciones en Nucleoeléctrica Argentina S.A. (Central Nuclear Atucha).",
+      "Denuncia persecución gremial y defiende la vigencia de la tutela sindical en empresas con participación estatal."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 3183-D-2026\nFECHA: 30 de junio de 2026\nSITUACIÓN: Se presentó un proyecto de declaración para expresar repudio por el intento de despido de un delegado gremial en Nucleoeléctrica Argentina S.A. (Atucha).\nIMPACTO PARA NUESTRA EMPRESA: Nulo. Al tratarse de un proyecto de declaración, carece de efectos vinculantes o regulatorios para el sector privado o la cadena de valor energética.\nACCIÓN RECOMENDADA: Archivar y monitorear la conflictividad gremial en el sector energético, sin requerir acción legal o corporativa inmediata.\nREFERENCIA: Expediente 3183-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3182-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3182-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "CODIGO ADUANERO - LEY 22415 - MODIFICACION DEL ARTICULO 866 EQUIPARANDO LAS ESCALAS PUNITIVAS DEL CONTRABANDO DE TABACO Y SUS DERIVADOS CON LAS APLICADAS AL CONTRABANDO DE ESTUPEFACIENTES SUSTANCIAS QUE AFECTAN GRAVEMENTE A LA SALUD PUBLICA.",
+    "titulo_sintesis": "Equipara penas de contrabando de tabaco a las de estupefacientes en Código Aduanero",
+    "autor": "SNOPEK, GUILLERMO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [
+      "Logística / Transporte",
+      "Distribución / Comercialización",
+      "Importación / Exportación"
+    ],
+    "tags": [
+      "codigo aduanero",
+      "contrabando",
+      "tabaco",
+      "ley 22415",
+      "aduana",
+      "comercio ilegal"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto propone endurecer las sanciones penales para el contrabando de tabaco equiparándolas con el de estupefacientes. Esto busca desincentivar el comercio ilegal transfronterizo de cigarrillos y derivados. No prevé un impacto directo sobre las variables macroeconómicas agregadas, pero fortalece el control aduanero.",
+      "efectos_sobre_recaudacion": "Potencial aumento indirecto en la recaudación de impuestos internos y del Fondo Nacional del Tabaco al reducirse el volumen de productos que evaden el circuito fiscal formal.",
+      "efectos_sobre_empleo": "Sin efectos directos significativos sobre el empleo formal agregado, aunque podría proteger de manera marginal los puestos de trabajo en la industria tabacalera local registrada.",
+      "efectos_sobre_comercio_exterior": "Mayor control y penalización en fronteras para el flujo ilegal de tabaco, sin alterar las alícuotas de importación o exportación legales."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo en los costos de producción de las empresas formales. Podría incrementar los costos de compliance y control aduanero para operadores del sector.",
+      "barreras_de_entrada": "Sin cambio. No se alteran los requisitos de habilitación para operar en el mercado legal de tabaco.",
+      "impacto_pymes": "Neutral. Las pymes tabacaleras o distribuidoras formales se benefician indirectamente al disminuir la competencia desleal del mercado informal.",
+      "impacto_precios_al_consumidor": "Sin impacto directo en los precios de los productos legales, aunque podría encarecer los productos de contrabando en el mercado informal.",
+      "sectores_ganadores": [
+        "Industria tabacalera formal",
+        "Fisco Nacional"
+      ],
+      "sectores_perdedores": [
+        "Contrabandistas",
+        "Mercado informal de tabaco"
+      ]
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Neutral.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Neutral."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Modifica el artículo 866 de la Ley 22.415 (Código Aduanero) para equiparar las escalas penales del contrabando de tabaco con las de estupefacientes, endureciendo la sanción penal sin alterar la estructura impositiva o comercial directa.",
+      "rumbo_economico_proyectado": "Fortalecimiento del marco de control aduanero y combate al comercio ilícito transfronterizo."
+    },
+    "criticidad": "Media",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Mediano plazo (6-24 meses)",
+    "resumen_puntos": [
+      "Modificación del artículo 866 de la Ley 22.415 (Código Aduanero).",
+      "Equiparación de las penas por contrabando de tabaco y derivados con las aplicadas al contrabando de estupefacientes.",
+      "Incremento de la escala punitiva para desalentar el comercio ilegal transfronterizo de productos de tabaco."
+    ],
+    "riesgos_regulatorios": [
+      "Incremento de la rigurosidad en controles aduaneros para cargas de tabaco y derivados",
+      "Riesgo de demoras operativas por mayores inspecciones en frontera"
+    ],
+    "oportunidades": [
+      "Reducción de la competencia desleal proveniente del contrabando de cigarrillos",
+      "Protección del mercado formal de tabaco y sus canales de distribución autorizados"
+    ],
+    "minuta": "PARA: Directorio / Gerencia de Legales y Asuntos Corporativos\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley 3182-D-2026 - Equiparación de penas por contrabando de tabaco\nFECHA: 30 de junio de 2026\n\nSITUACIÓN:\nSe ha presentado un proyecto de ley (Expediente 3182-D-2026) que busca modificar el artículo 866 del Código Aduanero (Ley 22.415). La iniciativa propone equiparar las escalas punitivas del contrabando de tabaco y sus derivados con las aplicadas al contrabando de estupefacientes y sustancias que afectan gravemente la salud pública.\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto directo es de carácter regulatorio y aduanero. Para las empresas que operan en el mercado formal de tabaco y su cadena de valor, la medida es positiva ya que busca combatir de manera más severa el comercio ilegal y la competencia desleal. No obstante, podría generar un incremento en la rigurosidad de los controles aduaneros físicos y documentales para la importación y exportación de insumos y productos terminados del sector, traduciéndose en potenciales demoras operativas.\n\nACCIÓN RECOMENDADA:\n1. Monitorear el giro a comisiones del proyecto para evaluar su avance legislativo.\n2. Coordinar con el área de comercio exterior y despachantes de aduana para asegurar el estricto cumplimiento de la normativa aduanera vigente y mitigar demoras ante eventuales mayores controles.\n3. Evaluar el impacto de la reducción del contrabando en la participación de mercado de los productos formales.\n\nREFERENCIA:\nExpediente 3182-D-2026, Cámara de Diputados. Fuente oficial: https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3182-D-2026",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3181-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3181-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "EXPRESAR RECONOCIMIENTO A LA TRAYECTORIA DE RICARDO COHEN (ROCAMBOLE) COMO DISENADOR GRAFICO Y ARTISTA PLASTICO Y AUDIOVISUAL.",
+    "titulo_sintesis": "Reconoce la trayectoria artística y de diseño de Ricardo Cohen (Rocambole)",
+    "autor": "CAMPO, JULIETA MARISOL",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "declaracion",
+      "reconocimiento",
+      "cultura",
+      "rocambole",
+      "diseño-grafico"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto es de carácter puramente declarativo y de reconocimiento cultural. No presenta articulado con impacto macroeconómico ni regulaciones sobre la actividad productiva.",
+      "efectos_sobre_recaudacion": "Sin efecto directo sobre la recaudación fiscal.",
+      "efectos_sobre_empleo": "Sin impacto sobre el mercado laboral.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto en costos operativos.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de mercado.",
+      "impacto_pymes": "Sin impacto diferencial para PyMEs.",
+      "impacto_precios_al_consumidor": "Sin impacto sobre precios finales.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un proyecto de declaración de reconocimiento a un artista plástico, encuadrándose como un acto de carácter simbólico y cultural sin efectos normativos ni económicos.",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Expresa el reconocimiento formal de la Cámara de Diputados a la trayectoria artística de Ricardo Cohen (Rocambole).",
+      "Destaca su labor como diseñador gráfico, artista plástico y realizador audiovisual.",
+      "Carece de disposiciones de carácter impositivo, regulatorio o de fomento económico."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 3181-D-2026\nFECHA: 2026-06-30\nSITUACIÓN: Se ha presentado un proyecto para expresar reconocimiento a la trayectoria de Ricardo Cohen (Rocambole).\nIMPACTO PARA NUESTRA EMPRESA: Nulo. Se trata de una iniciativa puramente simbólica y cultural que no afecta la regulación, costos ni operatividad de ningún sector industrial.\nACCIÓN RECOMENDADA: Archivar y no requerir seguimiento legal adicional.\nREFERENCIA: Expediente 3181-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3180-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3180-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "SUSPENDASE LA APLICACION DE LA LEY 27120, DE ELECCION DE PARLAMENTARIOS DEL MERCOSUR.",
+    "titulo_sintesis": "Suspende la elección directa de parlamentarios del Mercosur",
+    "autor": "FERRARO, MAXIMILIANO",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "parlasur",
+      "elecciones",
+      "gasto publico",
+      "mercosur",
+      "reforma electoral"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Fiscal",
+      "resumen": "La suspensión de la elección directa de parlamentarios del Mercosur reduce el gasto público electoral del Estado Nacional. Evita el desembolso de fondos destinados a la logística de comicios y la impresión de boletas para esta categoría. No genera un impacto directo sobre las variables macroeconómicas de producción o balanza de pagos.",
+      "efectos_sobre_recaudacion": "Genera un ahorro fiscal directo para el Tesoro Nacional al eliminar el financiamiento de boletas y aportes de campaña para la categoría de parlamentarios del Mercosur.",
+      "efectos_sobre_empleo": "Sin impacto significativo sobre el mercado laboral general, exceptuando la reducción de contrataciones temporales de personal logístico durante los periodos electorales.",
+      "efectos_sobre_comercio_exterior": "Sin impacto sobre las exportaciones o importaciones de bienes y servicios."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo sobre la estructura de costos de las empresas industriales.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de competencia ni de acceso a ningún mercado.",
+      "impacto_pymes": "Sin impacto diferencial para las pequeñas y medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios al consumidor.",
+      "sectores_ganadores": [
+        "Estado Nacional (por reducción de gasto público)"
+      ],
+      "sectores_perdedores": [
+        "Partidos políticos (por menor recepción de fondos para impresión de boletas)",
+        "Empresas de impresión y logística electoral (por menor demanda de servicios específicos)"
+      ]
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado permanente.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto propone suspender la aplicación de la Ley 27.120, lo cual constituye una reforma de carácter procedimental y de organización política del Estado, sin intervenir de manera directa en la regulación de los mercados o la asignación de recursos productivos.",
+      "rumbo_economico_proyectado": "Consolidación de la racionalización del gasto político y simplificación de los procesos electorales nacionales."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Mediano plazo (6-24 meses)",
+    "resumen_puntos": [
+      "Suspensión por tiempo indeterminado de la aplicación de la Ley 27.120 de elección de parlamentarios del Mercosur.",
+      "Eliminación de la convocatoria a elecciones directas para cubrir los cargos de parlamentarios del Mercosur en los próximos turnos electorales.",
+      "Consecuente reducción del gasto público nacional destinado al financiamiento de campañas y logística electoral para esta categoría específica."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: Cerebro Economista - EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley de suspensión de elecciones del Parlasur (Exp. 3180-D-2026)\nFECHA: 2026-06-30\n\nSITUACIÓN:\nSe ha presentado en la Cámara de Diputados un proyecto de ley que propone suspender la aplicación de la Ley 27.120, lo que anula la elección directa de parlamentarios del Mercosur.\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto para el sector industrial es estrictamente neutral. La norma no altera costos operativos, regulaciones comerciales, aranceles ni normativas laborales. Desde la perspectiva macroeconómica, representa un ahorro fiscal marginal para el Estado Nacional al evitar los costos de logística, impresión de boletas y aportes de campaña para esta categoría electoral.\n\nACCIÓN RECOMENDADA:\nArchivar el presente informe. No se requieren acciones de adecuación corporativa, legal ni operativa por parte de la compañía.\n\nREFERENCIA:\nExpediente 3180-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3179-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Proyecto de Ley",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3179-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "REGIMEN DE INTEGRIDAD, TRANSPARENCIA Y AUSTERIDAD EN LA REPRESENTACION DEL ESTADO EN EMPRESAS Y SOCIEDADES CON PARTICIPACION ESTATAL.",
+    "titulo_sintesis": "Establece régimen de integridad y austeridad para representantes estatales en empresas públicas",
+    "autor": "PAULON, ESTEBAN",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [
+      "Asuntos Constitucionales",
+      "Legislación General"
+    ],
+    "industrias_afectadas": [
+      "Energía y Combustibles",
+      "Finanzas y Banca",
+      "Logística y Transporte",
+      "Telecomunicaciones y Medios"
+    ],
+    "cadena_de_valor_afectada": [
+      "Gobernanza Corporativa",
+      "Contrataciones Públicas",
+      "Dirección de Empresas"
+    ],
+    "tags": [
+      "empresas publicas",
+      "transparencia",
+      "austeridad",
+      "gobernanza",
+      "etica publica"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "Establece pautas de conducta, transparencia y límites de remuneración para directores estatales en empresas públicas. Busca reducir el gasto político y mejorar la eficiencia en la gestión de activos del Estado. No altera variables macroeconómicas de forma directa pero promueve la disciplina fiscal indirectamente.",
+      "efectos_sobre_recaudacion": "Potencial reducción marginal del gasto público indirecto mediante topes salariales y control de viáticos de directores estatales.",
+      "efectos_sobre_empleo": "Sin impacto directo sobre el mercado laboral general; regula exclusivamente cargos jerárquicos de representación estatal.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo sobre el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto directo en costos de producción de empresas privadas. Puede reducir costos de representación en empresas con participación estatal.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de acceso al mercado para competidores privados.",
+      "impacto_pymes": "Neutral. No establece regulaciones ni beneficios específicos para el segmento PyME.",
+      "impacto_precios_al_consumidor": "Neutral. No afecta la estructura de costos de bienes de consumo masivo.",
+      "sectores_ganadores": [
+        "Administración Pública",
+        "Contribuyentes"
+      ],
+      "sectores_perdedores": [
+        "Directores y Representantes Estatales"
+      ]
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Neutral. Afecta únicamente a designaciones políticas y de representación estatal.",
+      "convenios_colectivos_afectados": "Ninguno.",
+      "impacto_autonomos_monotributo": "Sin impacto."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto regula los deberes, incompatibilidades y pautas de austeridad de los funcionarios que representan al Estado en empresas públicas, encuadrándose en la organización y ética de la función pública.",
+      "rumbo_economico_proyectado": "Consolidación de estándares de transparencia institucional y control del gasto en la gestión de empresas públicas."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Mediano plazo (6-24 meses)",
+    "resumen_puntos": [
+      "Establecimiento de un régimen estricto de incompatibilidades para representantes estatales en empresas públicas.",
+      "Obligatoriedad de presentar declaraciones juradas patrimoniales y de intereses de forma pública.",
+      "Fijación de pautas de austeridad en viáticos, pasajes y remuneraciones de los directores designados por el Estado."
+    ],
+    "riesgos_regulatorios": [
+      "Mayores requisitos de compliance y reportes de transparencia para empresas mixtas con participación estatal."
+    ],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Ley de Integridad y Austeridad en Empresas Públicas (Exp. 3179-D-2026)\nFECHA: 30 de Junio de 2026\n\nSITUACIÓN:\nSe presentó un proyecto de ley que busca regular de manera estricta la conducta, incompatibilidades y remuneraciones de los representantes del Estado en empresas públicas y sociedades con participación estatal.\n\nIMPACTO PARA NUESTRA EMPRESA:\nEl impacto directo para el sector industrial privado es neutral. Sin embargo, para aquellas empresas que operan en joint ventures o consorcios con participación estatal (ej. sector energético o infraestructura), se prevé un incremento en las exigencias de transparencia y compliance en la gobernanza corporativa compartida.\n\nACCIÓN RECOMENDADA:\nMonitorear el avance del proyecto en las comisiones de la Cámara de Diputados, especialmente si la empresa posee contratos de participación público-privada o sociedades mixtas con el Estado.\n\nREFERENCIA:\nExpediente 3179-D-2026, Cámara de Diputados. Fuente oficial: https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3179-D-2026",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3178-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3178-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "EXPRESAR PREOCUPACION Y RECHAZO A LAS EXPRESIONES INTIMIDATORIAS DE DIOSDADO CABELLO CONTRA LA DIRIGENTE VENEZOLANA ELISA TROTTA GAMUS.",
+    "titulo_sintesis": "Expresa preocupación y rechazo ante declaraciones contra Elisa Trotta Gamus",
+    "autor": "BANFI, KARINA",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "declaracion",
+      "politica-exterior",
+      "venezuela"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "Se trata de un proyecto de declaración de carácter estrictamente político y diplomático. No presenta articulado con impacto macroeconómico ni regulaciones sobre la actividad productiva.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado.",
+      "efectos_sobre_empleo": "Sin efectos sobre el mercado laboral.",
+      "efectos_sobre_comercio_exterior": "Sin impacto directo sobre el comercio exterior."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin impacto en los costos operativos de las empresas.",
+      "barreras_de_entrada": "Sin cambio. No altera las condiciones de acceso a ningún mercado.",
+      "impacto_pymes": "Sin impacto diferencial para micro, pequeñas o medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes o servicios.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "No afecta convenios colectivos de trabajo.",
+      "impacto_autonomos_monotributo": "Sin impacto sobre trabajadores independientes."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "El proyecto expresa una declaración de preocupación y rechazo de carácter político, sin articulado que establezca medidas económicas, regulatorias o impositivas.",
+      "rumbo_economico_proyectado": "No consolida ninguna tendencia de política económica al ser una declaración de índole política internacional."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Expresa el rechazo de la Cámara de Diputados a las expresiones intimidatorias de Diosdado Cabello.",
+      "Solidaridad con la dirigente venezolana Elisa Trotta Gamus ante las agresiones mencionadas.",
+      "Carece de medidas de carácter vinculante, impositivo o regulatorio para la actividad económica."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 3178-D-2026\nFECHA: 2026-06-30\nSITUACIÓN: Se presentó un proyecto de declaración para expresar preocupación y rechazo ante las expresiones de Diosdado Cabello contra Elisa Trotta Gamus.\nIMPACTO PARA NUESTRA EMPRESA: Nulo. El proyecto es de naturaleza estrictamente política y diplomática, sin efectos regulatorios, impositivos ni comerciales sobre la actividad industrial.\nACCIÓN RECOMENDADA: Archivar y monitorear sin requerir acción por parte del equipo legal o corporativo.\nREFERENCIA: Expediente 3178-D-2026 (Cámara de Diputados).",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
+  },
+  {
+    "id": "3177-D-2026",
+    "origen": "Camara de Diputados",
+    "estado": "En Debate",
+    "tipo_norma": "Declaración",
+    "link_fuente": "https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=3177-D-2026",
+    "link_boletin_oficial": "",
+    "numero_ley": "",
+    "titulo_original": "EXPRESAR BENEPLACITO POR EL 146º ANIVERSARIO DE LA FUNDACION DEL MUNICIPIO MISIONERO DE SAN PEDRO, CONMEMORADO EL 29 DE JUNIO DE 2026.",
+    "titulo_sintesis": "Expresa beneplácito por el 146º aniversario de la fundación de San Pedro, Misiones",
+    "autor": "RUIZ, YAMILA",
+    "bloque_politico": "",
+    "fecha_inicio": "2026-06-30",
+    "fecha_aprobacion": "",
+    "comisiones": [],
+    "industrias_afectadas": [],
+    "cadena_de_valor_afectada": [],
+    "tags": [
+      "declaracion",
+      "misiones",
+      "san-pedro",
+      "protocolar"
+    ],
+    "analisis_macro": {
+      "tipo_politica": "Regulatoria",
+      "resumen": "El proyecto es una declaración de beneplácito de carácter meramente institucional y protocolar. No genera modificaciones en variables macroeconómicas ni altera el presupuesto nacional. Su impacto en la economía agregada es nulo.",
+      "efectos_sobre_recaudacion": "Sin impacto directo sobre los ingresos o egresos del Estado nacional.",
+      "efectos_sobre_empleo": "No genera efectos sobre el mercado laboral ni la creación de empleo.",
+      "efectos_sobre_comercio_exterior": "Sin impacto en las exportaciones o importaciones."
+    },
+    "analisis_micro": {
+      "impacto_costos_operativos": "Sin efecto sobre los costos de producción de las empresas.",
+      "barreras_de_entrada": "Sin cambio. No se modifican las condiciones de acceso al mercado.",
+      "impacto_pymes": "Sin impacto diferencial para micro, pequeñas o medianas empresas.",
+      "impacto_precios_al_consumidor": "Sin efecto sobre los precios finales de bienes y servicios.",
+      "sectores_ganadores": [],
+      "sectores_perdedores": []
+    },
+    "analisis_laboral": {
+      "impacto_empleo_formal": "Sin impacto sobre el empleo registrado.",
+      "convenios_colectivos_afectados": "No afecta convenios colectivos de trabajo.",
+      "impacto_autonomos_monotributo": "Sin efecto sobre trabajadores independientes o monotributistas."
+    },
+    "clasificacion_doctrinal": {
+      "doctrina": "Neutro / Procedimental",
+      "descripcion": "Se trata de un proyecto de declaración de carácter protocolar y conmemorativo, sin contenido regulatorio, impositivo ni de fomento económico directo (Art. 1).",
+      "rumbo_economico_proyectado": "No altera el rumbo económico actual; consolida la práctica parlamentaria de emitir declaraciones de interés o beneplácito sin efectos jurídicos vinculantes."
+    },
+    "criticidad": "Baja",
+    "urgencia": "Monitorear",
+    "impacto": "Neutral",
+    "horizonte_temporal": "Corto plazo (0-6 meses)",
+    "resumen_puntos": [
+      "Expresa el beneplácito de la Cámara de Diputados por el 146º aniversario de San Pedro, Misiones.",
+      "Carece de articulado con impacto fiscal, impositivo o regulatorio directo.",
+      "Constituye un acto de carácter estrictamente protocolar y conmemorativo."
+    ],
+    "riesgos_regulatorios": [],
+    "oportunidades": [],
+    "minuta": "PARA: Directorio\nDE: EcoLey Alert\nASUNTO: Análisis del Proyecto de Declaración 3177-D-2026\nFECHA: 2026-06-30\nSITUACIÓN: Se presentó un proyecto para expresar beneplácito por el 146º aniversario de la fundación del municipio de San Pedro, Misiones.\nIMPACTO PARA NUESTRA EMPRESA: Nulo. Se trata de una iniciativa meramente protocolar y conmemorativa sin efectos regulatorios, impositivos ni comerciales.\nACCIÓN RECOMENDADA: Archivar y monitorear sin requerir acción por parte del equipo legal.\nREFERENCIA: Expediente 3177-D-2026, Cámara de Diputados.",
+    "es_absurdo": false,
+    "critica_observatorio": "",
+    "vinculacion": "confirmada"
   }
 ]
