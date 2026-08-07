@@ -30,6 +30,8 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import urllib3
 from bs4 import BeautifulSoup
+import io
+import PyPDF2
 import google.generativeai as genai
 from google.api_core.exceptions import ResourceExhausted
 
@@ -65,6 +67,24 @@ HEADERS = {
 def get_html(url, params=None):
     """Wrapper para hacer GET ignorando errores de certificados SSL (verify=False)"""
     return session.get(url, params=params, headers=HEADERS, timeout=30, verify=False)
+
+
+def _extract_text_from_pdf_url(url: str) -> str:
+    """Descarga un PDF desde una URL y extrae su texto usando PyPDF2."""
+    try:
+        r = session.get(url, headers=HEADERS, timeout=30, verify=False)
+        if r.status_code == 200:
+            pdf_file = io.BytesIO(r.content)
+            reader = PyPDF2.PdfReader(pdf_file)
+            text = []
+            for page in reader.pages:
+                page_text = page.extract_text()
+                if page_text:
+                    text.append(page_text)
+            return "\n".join(text)
+    except Exception as e:
+        print(f"  ❌ Error extrayendo PDF de {url}: {e}")
+    return ""
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -264,6 +284,28 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
             exp = (rec_lower.get("exp_diputados") or rec_lower.get("expediente") or "")
             titulo = (rec_lower.get("titulo") or rec_lower.get("sumario") or "")
             autor = (rec_lower.get("autor") or rec_lower.get("firmantes") or "")
+            proyecto_id = rec_lower.get("proyecto_id", "")
+
+            # Obtener el documento PDF real si existe proyecto_id
+            texto_real = ""
+            link_real = f"https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp={exp}" if exp else "https://datos.hcdn.gob.ar/"
+            
+            if proyecto_id:
+                adjunto_url = f"https://www.hcdn.gob.ar/proyectos/detalle_tp_adjunto/index.html?id={proyecto_id}"
+                html_adjunto = get_html(adjunto_url)
+                if html_adjunto.status_code == 200:
+                    soup_adj = BeautifulSoup(html_adjunto.text, "lxml")
+                    iframe = soup_adj.find("iframe", id="pdfs")
+                    if iframe and iframe.get("src"):
+                        pdf_url = iframe.get("src")
+                        print(f"    Descargando PDF para {exp}: {pdf_url}")
+                        texto_pdf = _extract_text_from_pdf_url(pdf_url)
+                        if texto_pdf:
+                            texto_real = texto_pdf
+                            link_real = adjunto_url
+
+            if not texto_real:
+                texto_real = titulo
 
             items.append({
                 "id_raw": exp,
@@ -272,11 +314,8 @@ def scrape_diputados(start_date: str, end_date: str) -> list:
                 "bloque": (rec_lower.get("bloque") or rec_lower.get("partido") or ""),
                 "fecha": fecha,
                 "origen": "Camara de Diputados",
-                "link": (
-                    f"https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp={exp}"
-                    if exp else "https://datos.hcdn.gob.ar/"
-                ),
-                "texto": titulo[:3000],
+                "link": link_real,
+                "texto": texto_real[:10000],  # Limitar a 10000 caracteres para no exceder tokens
                 "es_aprobado": False,
                 "exp_parlamentario": "",
             })
